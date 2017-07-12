@@ -16,6 +16,8 @@ h1 {
 
 #score_board {
    border: 2px solid white;
+   border-radius: 25px;
+   padding: 10px;
    width: 200px;
 }
 
@@ -46,11 +48,13 @@ main {
 }
 
 .category {
+    height: 60px;
     border-bottom: 2px solid whitesmoke;
     border-radius: 25px;
     text-align: center;
     padding: 10px;
 }
+
 .game_block {
     color: white;
     height: 15%;
