@@ -12,9 +12,15 @@
 //APPENDING A GAMEBOARD COLUMN AS ITS OWN DIV
 
 //Loop (through an object containing these)
-var categoryName = "United States History";
-var categoryId = "us_history";
+var categoryName = "";
+var categoryId = "";
 var jeoColumn = [categoryName, "", "", "", "", ""];
+
+var unitedStatesHistory = {
+    categoryName:"United States History", 
+    categoryId:"us_history"
+};
+
 /*var questionAndAnswer = {
     ["Year the United States gained its independence from the British Empire", "What is 1776?"],
     ["First African American President of the United States", "Who is Barrack Obama?"],
@@ -48,7 +54,7 @@ var displayColumn= function(categoryName, categoryId) {
     }
 }
 
-displayColumn('United States History', 'us_history');
+displayColumn(unitedStatesHistory.categoryName, unitedStatesHistory.categoryId);
 
 //SELECTING A QUESTION
 //GIVEN I am on the gameboard page 
