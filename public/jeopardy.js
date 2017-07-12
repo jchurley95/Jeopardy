@@ -1,29 +1,27 @@
 
 //master const object
 
+//Need an object for each category
+//Within each category object, need:
+    //categoryName
+    //categoryId
+    //questions
+    //correct answer
+    //all potential answers
 
 //APPENDING A GAMEBOARD COLUMN AS ITS OWN DIV
 
 //Loop (through an object containing these)
 var categoryName = "United States History";
 var categoryId = "us_history";
-var jeoColumn = [categoryName, 100, 200, 300, 400, 500];
+var jeoColumn = [categoryName, "", "", "", "", ""];
 /*var questionAndAnswer = {
-    ["United States History",
     ["Year the United States gained its independence from the British Empire", "What is 1776?"],
     ["First African American President of the United States", "Who is Barrack Obama?"],
     ["Treaty that ended the Revolutionary War", "What is the Treaty of Paris?"],
     ["President during the 19th and 20th century", "Who was William McKinley?"],
     ["This was the last US Navy ship sunk as a result of WW2", "What was the USS Bullhead?"]
-    ],
-    ["United States History",
-    ["Year the United States gained its independence from the British Empire", "What is 1776?"],
-    ["First African American President of the United States", "Who is Barrack Obama?"],
-    ["Treaty that ended the Revolutionary War", "What is the Treaty of Paris?"],
-    ["President during the 19th and 20th century", "Who was William McKinley?"],
-    ["This was the last US Navy ship sunk as a result of WW2", "What was the USS Bullhead?"]
-    ]
-};
+}
 */
 
 //Append a div with Category Name
@@ -56,14 +54,16 @@ displayColumn('United States History', 'us_history');
 //GIVEN I am on the gameboard page 
 //WHEN I click on a game block 
 //THEN makes question appear in footer
+var question = "question";
 
-var showQuestion = function() {
-   $('#question_board').append("question");
+var removeQuestion = function() {
+   $('#question_board').remove(question);
 
 }
 
-var removeQuestion = function() {
-   $('#question_board').remove("question");
+var showQuestion = function() {
+    removeQuestion();
+   $('#question_board').append(question);
 
 }
 

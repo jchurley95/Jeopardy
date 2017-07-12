@@ -4,6 +4,11 @@ body {
     color: white;
 }
 
+#logo {
+    height: 100px;
+    width: 500px;
+}
+
 h1 {
     color: whitesmoke;
     text-align: center;
@@ -26,7 +31,8 @@ main {
 }
 
 #score_board {
-   
+   border: 2px solid white;
+   width: 200px;
 }
 
 #question_board {
