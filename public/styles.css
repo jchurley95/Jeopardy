@@ -42,6 +42,11 @@ main {
     border-radius: 25px;
 }
 
+.category {
+    border: 2px solid whitesmoke;
+    border-radius: 25px;
+    text-align: center;
+}
 .game_block {
     color: white;
     height: 15%;
