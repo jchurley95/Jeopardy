@@ -1,0 +1,19 @@
+
+
+h1 {
+    color: green;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#game_board {
+    height: 625px;
+    width: 825px;
+    background-color:blue;
+    display: flex;
+}
