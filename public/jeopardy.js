@@ -5,15 +5,10 @@
 //APPENDING A GAMEBOARD COLUMN AS ITS OWN DIV
 
 //Loop (through an object containing these)
-var jeoColumn = ["category", 100, 200, 300, 400, 500];
+var categoryName = "Example Category Name";
+var jeoColumn = [categoryName, 100, 200, 300, 400, 500];
 
-
-    for(var i = 0; i < jeoColumn.length; i++){
-        $('#game_board').append('<div> '+ jeoColumn[i] + '</div><br>');
-    }
-
-
-    //Append a div with Category Name
+//Append a div with Category Name
     //Append a 100 point div
         //Clicking on this div appends 100 point question to answer_board
     //Append a 200 point div
@@ -24,6 +19,9 @@ var jeoColumn = ["category", 100, 200, 300, 400, 500];
         //Clicking on this div appends 400 point question to answer_board
     //Append a 500 point div
         //Clicking on this div appends 500 point question to answer_board
+    for(var i = 0; i < jeoColumn.length; i++){
+        $('#game_board').append('<div> '+ jeoColumn[i] + '</div><br>');
+    }
 
 
 //SELECTING A QUESTION
