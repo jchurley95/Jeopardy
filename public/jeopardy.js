@@ -19,15 +19,18 @@ var jeoColumn = [categoryName, 100, 200, 300, 400, 500];
         //Clicking on this div appends 400 point question to answer_board
     //Append a 500 point div
         //Clicking on this div appends 500 point question to answer_board
+    //for (var j = 0; j < 5; j++) {
+        $('#game_board').append('<div class="container"></div>');
     for(var i = 0; i < jeoColumn.length; i++){
-        $('#game_board').append('<button class="game_block"> '+ jeoColumn[i] + '</button><br>');
+        $('.container').append('<button class="game_block"> '+ jeoColumn[i] + '</button><br>');
     }
+// }
 
 
 //SELECTING A QUESTION
 //GIVEN I am on the gameboard page 
 //WHEN I click on a question 
-//THEN takes me to the answer question page
+//THEN makes question appear in footer
 
 
 //SUBMITTING CORRECT ANSWER
