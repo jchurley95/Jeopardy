@@ -35,8 +35,18 @@ main {
    width: 200px;
 }
 
-#question_board {
+footer {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
 
+#question_board {
+border: 2px solid gray;
+height: 300px;
+width: 75%;
+margin: 50px 50px;
+border-radius: 25px;
 }
 
 .column {

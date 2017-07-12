@@ -45,7 +45,7 @@ var cat1 = new category(
 
 var cat2 = new category(
     "Music", //category name
-    "us_history", // category Id
+    "c2", // category Id
     "First African American President of the United States", // question 1
     "Who is Barrack Obama?", // answer 1
     "Year the United States gained its independence from the British Empire", // question 2
@@ -60,7 +60,7 @@ var cat2 = new category(
 
 var cat3 = new category(
     "HTML", //category name
-    "us_history", // category Id
+    "c3", // category Id
     "First African American President of the United States", // question 1
     "Who is Barrack Obama?", // answer 1
     "Year the United States gained its independence from the British Empire", // question 2
@@ -75,7 +75,7 @@ var cat3 = new category(
 
 var cat4 = new category(
     "CSS", //category name
-    "us_history", // category Id
+    "c4", // category Id
     "First African American President of the United States", // question 1
     "Who is Barrack Obama?", // answer 1
     "Year the United States gained its independence from the British Empire", // question 2
@@ -90,7 +90,7 @@ var cat4 = new category(
 
 var cat5 = new category(
     "Javascript", //category name
-    "us_history", // category Id
+    "c5", // category Id
     "First African American President of the United States", // question 1
     "Who is Barrack Obama?", // answer 1
     "Year the United States gained its independence from the British Empire", // question 2
@@ -120,9 +120,9 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
     var pointsWorth = 100;
     for(var i = 0; i < 6; i++){
         if(i === 0) {
-            $('#column'+columnNumber+'').append('<div class="category"> '+ categoryName + '</div><br>');
+            $('#column' + columnNumber).append('<div class="category"> '+ categoryName + '</div><br>');
         } else {
-            $('#column'+columnNumber+'').append('<button class="game_block" id="' + categoryId + '-' + i + '" onclick="showQuestion()">'+ pointsWorth + '</button><br>');
+            $('#column' + columnNumber).append('<button class="game_block" id="' + categoryId + '-' + i + '" onclick="showQuestion()">'+ pointsWorth + '</button><br>');
             pointsWorth +=100;
         }
     }
@@ -140,7 +140,6 @@ displayColumn(5, cat5.categoryName, cat5.categoryId);
 //THEN makes question appear in footer
 var question = "question";
 var showQuestion = function() {
-    removeQuestion();
    $('#question_board').append(question);
 
 }
