@@ -9,6 +9,7 @@ main {
     display: flex;
     align-content: center;
     justify-content: center;
+    ;
 }
 
 #game_board {
@@ -31,7 +32,7 @@ main {
     color: white;
     height: 10%;
     width: 19%;
-    display: flex;
     border: 2px solid white;
     margin: 10px;
+    text-align: center;
 }

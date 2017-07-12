@@ -20,7 +20,7 @@ var jeoColumn = [categoryName, 100, 200, 300, 400, 500];
     //Append a 500 point div
         //Clicking on this div appends 500 point question to answer_board
     for(var i = 0; i < jeoColumn.length; i++){
-        $('#game_board').append('<div class="game_block"> '+ jeoColumn[i] + '</div><br>');
+        $('#game_board').append('<button class="game_block"> '+ jeoColumn[i] + '</button><br>');
     }
 
 
