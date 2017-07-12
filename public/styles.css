@@ -28,15 +28,16 @@ main {
 
 }
 
-.container {
+.column {
     display: flex;
     flex-direction: column;
+    width: 15%;
 }
 
 .game_block {
     color: white;
-    height: 10%;
-    width: 19%;
+    height: 15%;
+    width: 90%;
     border: 2px solid white;
     margin: 10px;
     text-align: center;
