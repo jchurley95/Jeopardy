@@ -1,4 +1,38 @@
+/// Data & Core Business Logic ///
 
+/// User Interface ///
+
+/// Top-Level Application Code ///
+
+var questionArray = [
+    {
+        id: "11",
+        q: "First African American President of the United States",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    }
+]
+
+function() {
+    var questionId = $this.attr("id").val();
+    var question = questionArray.find(id: questionId);
+    $("#question").html(question.q);
+    $("#a1").html(question.a1);
+    $("#a2").html(question.a2);
+    $("#a3").html(question.a2);
+    $("#a4").html(question.a2);
+    $("#myModal").data("correct", question.ac);
+
+}
+
+function() {
+    var answer = $(this).attr("id").val();
+    var correctAnswer = $("#myModal").data("correct");
+    if (answer === correctAnswer)
+}
 //master const object
 
 //Need an object for each category
@@ -30,7 +64,7 @@ this.answer5 = a5;
 
 var cat1 = new category(
     "United States History", //category name
-    "us_history", // category Id
+    "c1", // category Id
     "First African American President of the United States", // question 1
     "Who is Barrack Obama?", // answer 1
     "Year the United States gained its independence from the British Empire", // question 2
@@ -59,7 +93,7 @@ var cat2 = new category(
     );
 
 var cat3 = new category(
-    "HTML", //category name
+    "Capitals of Countries", //category name
     "c3", // category Id
     "First African American President of the United States", // question 1
     "Who is Barrack Obama?", // answer 1
@@ -74,7 +108,7 @@ var cat3 = new category(
     );
 
 var cat4 = new category(
-    "CSS", //category name
+    "Danny's Favorite Things", //category name
     "c4", // category Id
     "First African American President of the United States", // question 1
     "Who is Barrack Obama?", // answer 1
@@ -89,7 +123,7 @@ var cat4 = new category(
     );
 
 var cat5 = new category(
-    "Javascript", //category name
+    "Danny's Least Favorite Things", //category name
     "c5", // category Id
     "First African American President of the United States", // question 1
     "Who is Barrack Obama?", // answer 1
@@ -122,7 +156,7 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
         if(i === 0) {
             $('#column' + columnNumber).append('<div class="category"> '+ categoryName + '</div><br>');
         } else {
-            $('#column' + columnNumber).append('<button class="game_block" id="' + categoryId + '-' + i + '" onclick="showQuestion()">'+ pointsWorth + '</button><br>');
+            $('#column' + columnNumber).append('<button class="game_block" id="' + categoryId + '-' + i + '" onclick="showQuestion('+categoryId+')">'+ pointsWorth + '</button><br>');
             pointsWorth +=100;
         }
     }
@@ -139,16 +173,29 @@ displayColumn(5, cat5.categoryName, cat5.categoryId);
 //WHEN I click on a game block 
 //THEN makes question appear in footer
 var question = "question";
-var showQuestion = function() {
-   $('#question_board').append(question);
-
+var showQuestion = function(columnNumber, categoryName, categoryId) {
+    $('#question_board').append('<div id="myModal" class="modal"><div class="modal-content"><span class="close">&times;</span></div></div>');
+    
 }
 
 var removeQuestion = function() {
    $('#question_board').remove(question);
-
 }
 
+var modal = document.getElementById('myModal');
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+span.onclick = function() {
+    modal.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
 //SUBMITTING CORRECT ANSWER
 //GIVEN I am on the page for answering a question 
