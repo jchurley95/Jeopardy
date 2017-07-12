@@ -29,7 +29,7 @@ main {
    
 }
 
-#answer_board {
+#question_board {
 
 }
 
@@ -43,9 +43,10 @@ main {
 }
 
 .category {
-    border: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
     border-radius: 25px;
     text-align: center;
+    padding: 10px;
 }
 .game_block {
     color: white;
