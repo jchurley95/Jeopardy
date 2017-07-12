@@ -3,17 +3,21 @@
 
 
 //APPENDING A GAMEBOARD COLUMN AS ITS OWN DIV
-//Append a div with Category Name
-//Append 100 point div
-    //Clicking on this div appends 100 point question to answer_board
-//Append 200 point div
-    //Clicking on this div appends 200 point question to answer_board
-//Append 300 point div
-    //Clicking on this div appends 300 point question to answer_board
-//Append 400 point div
-    //Clicking on this div appends 400 point question to answer_board
-//Append 500 point div
-    //Clicking on this div appends 500 point question to answer_board
+//Loop (through an object containing these)
+
+var jeoColumn = ["category", 100, 200, 300, 400, 500];
+
+    //Append a div with Category Name
+    //Append a 100 point div
+        //Clicking on this div appends 100 point question to answer_board
+    //Append a 200 point div
+        //Clicking on this div appends 200 point question to answer_board
+    //Append a 300 point div
+        //Clicking on this div appends 300 point question to answer_board
+    //Append a 400 point div
+        //Clicking on this div appends 400 point question to answer_board
+    //Append a 500 point div
+        //Clicking on this div appends 500 point question to answer_board
 
 
 //SELECTING A QUESTION
