@@ -13,19 +13,19 @@
 
 //Loop (through an object containing these)
 
-const category = function(categoryName, categoryId, question1, answer1, question2, answer2, question3, answer3, question4, answer4, question5) {
-this.categoryName = "";
-this.categoryId = "";
-this.question1 = "";
-this.answer1 = "";
-this.question2 = "";
-this.answer2 = "";
-this.question3 = "";
-this.answer3 = "";
-this.question4 = "";
-this.answer4 = "";
-this.question5 = "";
-this.answer5 = "";
+const category = function(name, id, q1, a1, q2, a2, q3, a3, q4, a4, q5, a5) {
+this.categoryName = name;
+this.categoryId = id;
+this.question1 = q1;
+this.answer1 = a1;
+this.question2 = q2;
+this.answer2 = a2;
+this.question3 = q3;
+this.answer3 = a3;
+this.question4 = q4;
+this.answer4 = a4;
+this.question5 = q5;
+this.answer5 = a5;
 }
 
 var unitedStatesHistory = new category(
@@ -43,65 +43,6 @@ var unitedStatesHistory = new category(
     "What was the USS Bullhead?" // answer 5
     );
 
-var cat2 = new category(
-    "United States History", //category name
-    "us_history", // category Id
-    "First African American President of the United States", // question 1
-    "Who is Barrack Obama?", // answer 1
-    "Year the United States gained its independence from the British Empire", // question 2
-    "1776", // answer 2
-    "Treaty that ended the Revolutionary War", // question 3
-    "Treaty of Paris", // answer 3
-    "President during the 19th and 20th century", // question 4
-    "Who was William McKinley?", // answer 4
-    "This was the last US Navy ship sunk as a result of WW2", // question 5
-    "What was the USS Bullhead?" // answer 5
-    );
-
-var cat3 = new category(
-    "United States History", //category name
-    "us_history", // category Id
-    "First African American President of the United States", // question 1
-    "Who is Barrack Obama?", // answer 1
-    "Year the United States gained its independence from the British Empire", // question 2
-    "1776", // answer 2
-    "Treaty that ended the Revolutionary War", // question 3
-    "Treaty of Paris", // answer 3
-    "President during the 19th and 20th century", // question 4
-    "Who was William McKinley?", // answer 4
-    "This was the last US Navy ship sunk as a result of WW2", // question 5
-    "What was the USS Bullhead?" // answer 5
-    );
-
-var cat4 = new category(
-    "United States History", //category name
-    "us_history", // category Id
-    "First African American President of the United States", // question 1
-    "Who is Barrack Obama?", // answer 1
-    "Year the United States gained its independence from the British Empire", // question 2
-    "1776", // answer 2
-    "Treaty that ended the Revolutionary War", // question 3
-    "Treaty of Paris", // answer 3
-    "President during the 19th and 20th century", // question 4
-    "Who was William McKinley?", // answer 4
-    "This was the last US Navy ship sunk as a result of WW2", // question 5
-    "What was the USS Bullhead?" // answer 5
-    );
-
-var cat5 = new category(
-    "United States History", //category name
-    "us_history", // category Id
-    "First African American President of the United States", // question 1
-    "Who is Barrack Obama?", // answer 1
-    "Year the United States gained its independence from the British Empire", // question 2
-    "1776", // answer 2
-    "Treaty that ended the Revolutionary War", // question 3
-    "Treaty of Paris", // answer 3
-    "President during the 19th and 20th century", // question 4
-    "Who was William McKinley?", // answer 4
-    "This was the last US Navy ship sunk as a result of WW2", // question 5
-    "What was the USS Bullhead?" // answer 5
-    );
     
 //Append a div with Category Name
     //Append a 100 point div
