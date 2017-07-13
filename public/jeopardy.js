@@ -13,7 +13,7 @@ var questionArray = [
     },
     {
         id: "12",
-        pointsworth: 200,
+        pointsWorth: 200,
         q: "Year the United States gained its independence from the British Empire",
         a1: "Who is 1778?",
         a2: "What is 1776?",
@@ -23,7 +23,7 @@ var questionArray = [
     },
     {
         id: "13",
-        pointsworth: 300,
+        pointsWorth: 300,
         q: "Treaty that ended the Revolutionary War",
         a1: "What is the Treaty of Trent?",
         a2: "What is the Treaty of Florence?",
@@ -33,7 +33,7 @@ var questionArray = [
     },
     {
         id: "14",
-        pointsworth: 400,
+        pointsWorth: 400,
         q: "President during the 19th and 20th century",
         a1: "Who is James K. Polk?",
         a2: "Who is Theodore Roosevelt?",
@@ -43,7 +43,7 @@ var questionArray = [
     },
     {
         id: "15",
-        pointsworth: 500,
+        pointsWorth: 500,
         q: "This was the last US Navy ship sunk as a result of WW2",
         a1: "What is the USS Bullhead?",
         a2: "What is the USS Arizona?",
@@ -63,7 +63,7 @@ var questionArray = [
     },
     {
         id: "22",
-        pointsworth: 200,
+        pointsWorth: 200,
         q: '"Panda, panda, I got..."',
         a1: "What is broads in Atlanta",
         a2: "What is respectable, young women in the UK",
@@ -73,7 +73,7 @@ var questionArray = [
     },
     {
         id: "23",
-        pointsworth: 300,
+        pointsWorth: 300,
         q: "Studio where the Beatles recorded 191 songs.",
         a1: "What is Downton Abby?",
         a2: "What is Abby Road?",
@@ -83,7 +83,7 @@ var questionArray = [
     },
     {
         id: "24",
-        pointsworth: 400,
+        pointsWorth: 400,
         q: "What is Jay-z’s real name?",
         a1: "What is Shaun Carter?",
         a2: "What is Led Zeppelin",
@@ -93,7 +93,7 @@ var questionArray = [
     },
     {
         id: "25",
-        pointsworth: 500,
+        pointsWorth: 500,
         q: "",
         a1: "Who is George Washington",
         a2: "Who is Barrack Obama",
@@ -113,7 +113,7 @@ var questionArray = [
     },
     {
         id: "32",
-        pointsworth: 200,
+        pointsWorth: 200,
         q: "",
         a1: "Who is George Washington",
         a2: "Who is Barrack Obama",
@@ -123,7 +123,7 @@ var questionArray = [
     },
     {
         id: "33",
-        pointsworth: 300,
+        pointsWorth: 300,
         q: "",
         a1: "Who is George Washington",
         a2: "Who is Barrack Obama",
@@ -133,7 +133,7 @@ var questionArray = [
     },
     {
         id: "34",
-        pointsworth: 400,
+        pointsWorth: 400,
         q: "",
         a1: "Who is George Washington",
         a2: "Who is Barrack Obama",
@@ -143,7 +143,7 @@ var questionArray = [
     },
     {
         id: "35",
-        pointsworth: 500,
+        pointsWorth: 500,
         q: "",
         a1: "Who is George Washington",
         a2: "Who is Barrack Obama",
@@ -163,7 +163,7 @@ var questionArray = [
     },
     {
         id: "42",
-        pointsworth: 200,
+        pointsWorth: 200,
         q: "",
         a1: "Who is George Washington",
         a2: "Who is Barrack Obama",
@@ -173,7 +173,7 @@ var questionArray = [
     },
     {
         id: "43",
-        pointsworth: 300,
+        pointsWorth: 300,
         q: "",
         a1: "Who is George Washington",
         a2: "Who is Barrack Obama",
@@ -183,7 +183,7 @@ var questionArray = [
     },
     {
         id: "44",
-        pointsworth: 400,
+        pointsWorth: 400,
         q: "",
         a1: "Who is George Washington",
         a2: "Who is Barrack Obama",
@@ -193,7 +193,7 @@ var questionArray = [
     },
     {
         id: "45",
-        pointsworth: 500,
+        pointsWorth: 500,
         q: "",
         a1: "Who is George Washington",
         a2: "Who is Barrack Obama",
@@ -213,7 +213,7 @@ var questionArray = [
     },
     {
         id: "52",
-        pointsworth: 200,
+        pointsWorth: 200,
         q: "",
         a1: "Who is George Washington",
         a2: "Who is Barrack Obama",
@@ -223,7 +223,7 @@ var questionArray = [
     },
     {
         id: "53",
-        pointsworth: 300,
+        pointsWorth: 300,
         q: "",
         a1: "Who is George Washington",
         a2: "Who is Barrack Obama",
@@ -233,7 +233,7 @@ var questionArray = [
     },
     {
         id: "54",
-        pointsworth: 400,
+        pointsWorth: 400,
         q: "",
         a1: "Who is George Washington",
         a2: "Who is Barrack Obama",
@@ -243,7 +243,7 @@ var questionArray = [
     },
     {
         id: "55",
-        pointsworth: 500,
+        pointsWorth: 500,
         q: "",
         a1: "Who is George Washington",
         a2: "Who is Barrack Obama",
