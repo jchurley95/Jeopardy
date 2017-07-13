@@ -1,16 +1,40 @@
 /// Data & Core Business Logic ///
 
+//Need an object for each category
+//Within each category object, need:
+    //categoryName
+    //categoryId
 
-// <div id="myModal" class="modal" data-correct="">
-//             <div class="modal-content">
-//             <span class="close">&times;</span>
-//             <div id="question"></div>
-//             <button id="a1"></button>
-//             <button id="a2"></button>
-//             <button id="a3"></button>
-//             <button id="a4"></button>
-//             </div>
-//         </div> 
+
+const category = function(name, id) {
+    this.categoryName = name;
+    this.categoryId = id;
+    };
+
+var cat1 = new category(
+    "United States History", //category name
+    "1", // category Id
+    );
+
+var cat2 = new category(
+    "Music", //category name
+    "2" // category Id
+    );
+
+var cat3 = new category(
+    "Capitals of Countries", //category name
+    "3" // category Id
+    );
+
+var cat4 = new category(
+    "Danny's Favorite Things", //category name
+    "4" // category Id
+    );
+
+var cat5 = new category(
+    "Danny's Least Favorite Things", //category name
+    "5" // category Id
+    );
 
 var questionArray = [
     {
@@ -265,43 +289,6 @@ var questionArray = [
     }
 ];
 
-
-//Need an object for each category
-//Within each category object, need:
-    //categoryName
-    //categoryId
-
-
-const category = function(name, id) {
-    this.categoryName = name;
-    this.categoryId = id;
-    };
-
-var cat1 = new category(
-    "United States History", //category name
-    "1", // category Id
-    );
-
-var cat2 = new category(
-    "Music", //category name
-    "2" // category Id
-    );
-
-var cat3 = new category(
-    "Capitals of Countries", //category name
-    "3" // category Id
-    );
-
-var cat4 = new category(
-    "Danny's Favorite Things", //category name
-    "4" // category Id
-    );
-
-var cat5 = new category(
-    "Danny's Least Favorite Things", //category name
-    "5" // category Id
-    );
-
 /// LOAD THE BOARD
 //APPENDING A GAMEBOARD COLUMN AS ITS OWN DIV
 //Append a div with Category Name
@@ -342,44 +329,45 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
             $modal.attr('id', "q_modal" + categoryId + i);
             $modal.addClass("modal");
             $modal.hide();
-            $modal.attr("position", "fixed");
-            $modal.attr("z-index", "1");
-            $modal.attr("padding-top", "100px");
-            $modal.attr("left", "0");
-            $modal.attr("top", "0");
-            $modal.attr("width", "50%");
-            $modal.attr("height", "50%");
-            $modal.attr("overflow", "auto");
-            $modal.attr("background-color", "rgb(0,0,0)");
-            $modal.attr("background-color", "rgba(0,0,0,1)");
+            $modal.css("border", "2px solid white");
+            $modal.css("position", "fixed");
+            $modal.css("z-index", "1");
+            $modal.css("padding-top", "100px");
+            $modal.css("left", "0");
+            $modal.css("top", "0");
+            $modal.css("width", "50%");
+            $modal.css("height", "50%");
+            $modal.css("overflow", "auto");
+            $modal.css("background-color", "rgb(0,0,0)");
+            $modal.css("background-color", "rgba(0,0,0,1)");
             $modal.appendTo($('#question_board'));
 
             var $modalContent = $('<div>');
             $modalContent.addClass("modal-content");
-            $modalContent.attr('color', 'black');
-            $modalContent.attr('background-color', '#fefefe');
-            $modalContent.attr('margin', 'auto');
-            $modalContent.attr('padding', '20px');
-            $modalContent.attr('border', '1px solid #888');
-            $modalContent.attr('width', '80%');
+            $modalContent.css('color', 'black');
+            $modalContent.css('background-color', '#fefefe');
+            $modalContent.css('margin', 'auto');
+            $modalContent.css('padding', '20px');
+            $modalContent.css('border', '1px solid #888');
+            $modalContent.css('height', '80%');
+            $modalContent.css('width', '80%');
              $modalContent.appendTo($modal);
-            
-
-            var $close = $('<span>');
-            $close.html('X');
-            $close.attr('color', '#aaaaaa');
-            $close.attr('float', 'right');
-            $close.attr('font-size', '28px');
-            $close.attr('font-weight', 'bold');
-            $close.on("click", function() {
-                $modal.css('display', "none");
-            })
-            $close.appendTo($modalContent);
 
             var question = questionArray.filter(function(question) {
                 return question.id === $gameblock.id;
             });
 
+            var $close = $('<span>');
+            $close.html('<br> X');
+            $close.css('color', '#aaaaaa');
+            $close.css('float', 'right');
+            $close.css('font-size', '28px');
+            $close.css('font-weight', 'bold');
+            $close.on("click", function() {
+                $modal.css('display', "none");
+            })
+            $close.appendTo($modalContent);
+            
             var $questionSpace = $('<div>');
             $questionSpace.attr('id', 'question');
             $questionSpace.html(question.q);
@@ -432,14 +420,16 @@ displayColumn(5, cat5.categoryName, cat5.categoryId);
 };
 
 var checkCorrect = function(event) {
-    var answer = event.attr("id").val();
-    var correctAnswer = $("#myModal").data("correct");
-    if (answer === correctAnswer) {
-        alert("Correct!");
-    }
-    else {
-        alert("Incorrect.");
-    }
+    // var answer = event.target.attr("id").val();
+    // var correctAnswer = $("#q_modal").attr("ac").val();
+    // console.log(answer);
+    // console.log(ac);
+    // if (answer === correctAnswer) {
+    //     alert("Correct!");
+    // }
+    // else {
+    //     alert("Incorrect.");
+    // }
 }
 
 
