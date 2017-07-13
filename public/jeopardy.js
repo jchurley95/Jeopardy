@@ -319,7 +319,6 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
             var gid = categoryId + '' + i;
             var pgid = parseInt(gid);
             $gameblock.attr('id', pgid);
-            console.log($gameblock.id);
             $gameblock.on("click", function() {
                 showQuestion();
             });
@@ -329,11 +328,6 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
         }
     }
 }
-
-// var $close = $('#closer');
-// $close.on("click", function() {
-//     $('#q_modal').hide();
-// })
 
 
 var showQuestion = function(event) {
@@ -345,14 +339,14 @@ var showQuestion = function(event) {
             var $close = $('#closer');
             $close.on("click", function() {
             $('#q_modal').hide();
-            })
+            });
 
             var $modal = $('#q_modal');
             $modal.show();
+
             var $modalContent = $('#modal_c');
             
-            var $questionSpace = $('#question_space');
-            $questionSpace.attr('id', 'q');
+            var $questionSpace = $('#q');
             $questionSpace.html(question.q);
 
             var $answer1 = $('#a1');
@@ -372,13 +366,10 @@ var showQuestion = function(event) {
             $answer4.html(question.a4);
             $answer4.on("click", checkCorrect);
 }
-            //$("#q_modal").attr("correct", question.ac);
 
-// window.onclick = function(event) {
-//     if (event.target == $modal) {
-//         $modal.css('display', "none");
-//     }
-// }
+//$("#q_modal").attr("correct", question.ac);
+
+
 
 window.onload = function(){
 $('#q_modal').hide();
