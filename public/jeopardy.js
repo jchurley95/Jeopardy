@@ -321,7 +321,7 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
             $gameblock.attr('id', pgid);
             console.log($gameblock.id);
             $gameblock.on("click", function() {
-                showQuestion;
+                showQuestion();
             });
             $gameblock.html(pointsWorth);
             pointsWorth +=100;
@@ -330,52 +330,45 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
     }
 }
 
-var showQuestion = function() {
+var showQuestion = function(event) {
 
             var $modal = $('#q_modal');
-            $modal.attr('id', "q_modal" + categoryId + i);
+            $modal.show();
             var $modalContent = $('#modal_c');
 
-            var question = questionArray.filter(function(question) {
-                return question.id === pgid;
+            var question = questionArray.filter(function(event) {
+                return question.id === event.target.id;
             });
 
             var $close = $('#closer');
             $close.on("click", function() {
-                $modal.css('display', "none");
+                $modal.hide();
             })
 
             var $questionSpace = $('<div>');
             $questionSpace.attr('id', 'question');
-            $questionSpace.html(question.q);
-            $questionSpace.appendTo($modalContent);
-
-           
+            $questionSpace.html("question.q");
 
             var $answer1 = $('<button>');
             $answer1.attr('id', 'a1');
             $answer1.html(question.a1);
             $answer1.on("click", checkCorrect);
-            $answer1.appendTo($modalContent);
 
             var $answer2 = $('<button>');
             $answer2.attr('id', 'a2');
             $answer2.html(question.a2);
             $answer2.on("click", checkCorrect);
-            $answer2.appendTo($modalContent);
 
             var $answer3 = $('<button>');
             $answer3.attr('id', 'a3');
             $answer3.html(question.a3);
             $answer3.on("click", checkCorrect);
-            $answer3.appendTo($modalContent);
 
 
             var $answer4 = $('<button>');
             $answer4.attr('id', 'a4');
             $answer4.html(question.a4);
             $answer4.on("click", checkCorrect);
-            $answer4.appendTo($modalContent);
 }
             //$("#q_modal").attr("correct", question.ac);
 
@@ -386,6 +379,7 @@ var showQuestion = function() {
 // }
 
 window.onload = function(){
+$('#q_modal').hide();
 displayColumn(1, cat1.categoryName, cat1.categoryId);
 displayColumn(2, cat2.categoryName, cat2.categoryId);
 displayColumn(3, cat3.categoryName, cat3.categoryId);
@@ -418,11 +412,6 @@ var checkCorrect = function(event) {
 /// User Interface ///
 
 /// Top-Level Application Code ///
-
-
-var removeQuestion = function() {
-  // $('#question_board').remove(question);
-}
 
 
 //SUBMITTING CORRECT ANSWER
