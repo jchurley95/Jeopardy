@@ -38,7 +38,7 @@ var cat5 = new category(
 
 var questionArray = [
     {
-        id: "11",
+        id: 11,
         pointsWorth: 100,
         q: "First African American President of the United States",
         a1: "Who is George Washington?",
@@ -48,7 +48,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "12",
+        id: 12,
         pointsWorth: 200,
         q: "Year the United States gained its independence from the British Empire",
         a1: "Who is 1778?",
@@ -58,7 +58,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "13",
+        id: 13,
         pointsWorth: 300,
         q: "Treaty that ended the Revolutionary War",
         a1: "What is the Treaty of Trent?",
@@ -68,7 +68,7 @@ var questionArray = [
         ac: "a3"
     },
     {
-        id: "14",
+        id: 14,
         pointsWorth: 400,
         q: "President during the 19th and 20th century",
         a1: "Who is James K. Polk?",
@@ -78,7 +78,7 @@ var questionArray = [
         ac: "a4"
     },
     {
-        id: "15",
+        id: 15,
         pointsWorth: 500,
         q: "This was the last US Navy ship sunk as a result of WW2",
         a1: "What is the USS Bullhead?",
@@ -88,7 +88,7 @@ var questionArray = [
         ac: "a1"
     },
     {
-        id: "21",
+        id: 21,
         pointsWorth: 100,
         q: 'Recorded the song "Hey Jude"' ,
         a1: "Who is The Beatles",
@@ -98,7 +98,7 @@ var questionArray = [
         ac: "a1"
     },
     {
-        id: "22",
+        id: 22,
         pointsWorth: 200,
         q: '"Panda, panda, I got..."',
         a1: "What is broads in Atlanta",
@@ -108,7 +108,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "23",
+        id: 23,
         pointsWorth: 300,
         q: "Studio where the Beatles recorded 191 songs.",
         a1: "What is Downton Abby?",
@@ -118,7 +118,7 @@ var questionArray = [
         ac: "a1"
     },
     {
-        id: "24",
+        id: 24,
         pointsWorth: 400,
         q: "What is Jay-z’s real name?",
         a1: "What is Shaun Carter?",
@@ -128,7 +128,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "25",
+        id: 25,
         pointsWorth: 500,
         q: "",
         a1: "Who is George Washington",
@@ -138,7 +138,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "31",
+        id: 31,
         pointsWorth: 100,
         q: "",
         a1: "Who is George Washington",
@@ -148,7 +148,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "32",
+        id: 32,
         pointsWorth: 200,
         q: "",
         a1: "Who is George Washington",
@@ -158,7 +158,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "33",
+        id: 33,
         pointsWorth: 300,
         q: "",
         a1: "Who is George Washington",
@@ -168,7 +168,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "34",
+        id: 34,
         pointsWorth: 400,
         q: "",
         a1: "Who is George Washington",
@@ -178,7 +178,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "35",
+        id: 35,
         pointsWorth: 500,
         q: "",
         a1: "Who is George Washington",
@@ -188,7 +188,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "41",
+        id: 41,
         pointsWorth: 100,
         q: "",
         a1: "Who is George Washington",
@@ -198,7 +198,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "42",
+        id: 42,
         pointsWorth: 200,
         q: "",
         a1: "Who is George Washington",
@@ -208,7 +208,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "43",
+        id: 43,
         pointsWorth: 300,
         q: "",
         a1: "Who is George Washington",
@@ -218,7 +218,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "44",
+        id: 44,
         pointsWorth: 400,
         q: "",
         a1: "Who is George Washington",
@@ -228,7 +228,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "45",
+        id: 45,
         pointsWorth: 500,
         q: "",
         a1: "Who is George Washington",
@@ -238,7 +238,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "51",
+        id: 51,
         pointsWorth: 100,
         q: "",
         a1: "Who is George Washington",
@@ -248,7 +248,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "52",
+        id: 52,
         pointsWorth: 200,
         q: "",
         a1: "Who is George Washington",
@@ -258,7 +258,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "53",
+        id: 53,
         pointsWorth: 300,
         q: "",
         a1: "Who is George Washington",
@@ -268,7 +268,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "54",
+        id: 54,
         pointsWorth: 400,
         q: "",
         a1: "Who is George Washington",
@@ -278,7 +278,7 @@ var questionArray = [
         ac: "a2"
     },
     {
-        id: "55",
+        id: 55,
         pointsWorth: 500,
         q: "",
         a1: "Who is George Washington",
@@ -316,7 +316,10 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
 
             var $gameblock = $('<button>');
             $gameblock.addClass("game_block");
-            $gameblock.attr('id', categoryId + '' + i);
+            var gid = categoryId + '' + i;
+            var pgid = parseInt(gid);
+            $gameblock.attr('id', pgid);
+            console.log($gameblock.id);
             $gameblock.on("click", function() {
                 $modal.show();
             });
@@ -351,11 +354,18 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
             $modalContent.css('border', '1px solid #888');
             $modalContent.css('height', '80%');
             $modalContent.css('width', '80%');
-             $modalContent.appendTo($modal);
+            $modalContent.appendTo($modal);
 
             var question = questionArray.filter(function(question) {
-                return question.id === $gameblock.id;
+                console.log('%c INSIDE THE FUNCTION QUESTION ID ', 'background: #222; color: #bada55', question.id)
+                console.log(($gameblock).id + "INSIDE THE FUNCTION GAMEBLOCK");
+                return question.id === pgid;
+                
             });
+
+
+            console.log(($gameblock).attr('id') + 'GAME BLOCK outside');
+
 
             var $close = $('<span>');
             $close.html('<br> X');
@@ -367,13 +377,13 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
                 $modal.css('display', "none");
             })
             $close.appendTo($modalContent);
-            
+
             var $questionSpace = $('<div>');
             $questionSpace.attr('id', 'question');
             $questionSpace.html(question.q);
             $questionSpace.appendTo($modalContent);
 
-            console.log($('#questionSpace'));
+           
 
             var $answer1 = $('<button>');
             $answer1.attr('id', 'a1');
