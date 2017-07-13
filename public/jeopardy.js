@@ -333,17 +333,15 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
             $close.on("click", function() {
                 $('#q_modal').hide();
             })
-
+var question = questionArray.filter(function(event) {
+                return question.id === event.target.id;
+            });
+            
 var showQuestion = function(event) {
 
             var $modal = $('#q_modal');
             $modal.show();
             var $modalContent = $('#modal_c');
-
-            var question = questionArray.filter(function(event) {
-                return question.id === event.target.id;
-            });
-
             
             var $questionSpace = $('<div>');
             $questionSpace.attr('id', 'question');
