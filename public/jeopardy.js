@@ -1,21 +1,154 @@
 /// Data & Core Business Logic ///
 
-/// User Interface ///
-
-/// Top-Level Application Code ///
-
 var questionArray = [
     {
         id: "11",
         q: "First African American President of the United States",
+        a1: "Who is George Washington?",
+        a2: "Who is Barrack Obama?",
+        a3: "Who is Hillary Clinton?",
+        a4: "Who is Danny Hurley?",
+        ac: "a2"
+    },
+    {
+        id: "12",
+        q: "Year the United States gained its independence from the British Empire",
+        a1: "Who is 1778?",
+        a2: "What is 1776?",
+        a3: "What is 1678?",
+        a4: "What is 1872?",
+        ac: "a2"
+    },
+    {
+        id: "13",
+        q: "Treaty that ended the Revolutionary War",
+        a1: "What is the Treaty of Trent?",
+        a2: "What is the Treaty of Florence?",
+        a3: "What is the Treaty of Paris?",
+        a4: "What is the Treaty of Versailles?",
+        ac: "a3"
+    },
+    {
+        id: "14",
+        q: "President during the 19th and 20th century",
+        a1: "Who is James K. Polk?",
+        a2: "Who is Theodore Roosevelt?",
+        a3: "Who is James Buchanan?",
+        a4: "Who is William McKinley?",
+        ac: "a4"
+    },
+    {
+        id: "15",
+        q: "This was the last US Navy ship sunk as a result of WW2",
+        a1: "What is the USS Bullhead?",
+        a2: "What is the USS Arizona?",
+        a3: "What is the USS Louisitania?",
+        a4: "What is the USS Missouri?",
+        ac: "a1"
+    },
+    {
+        id: "21",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "22",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "23",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "24",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "25",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "31",
+        q: "",
         a1: "Who is George Washington",
         a2: "Who is Barrack Obama",
         a3: "Who is Hillary Clinton",
         a4: "Who is Danny Hurley",
         ac: "a2"
     }
-]
+];
 
+
+//Need an object for each category
+//Within each category object, need:
+    //categoryName
+    //categoryId
+
+
+const category = function(name, id) {
+    this.categoryName = name;
+    this.categoryId = id;
+    };
+
+var cat1 = new category(
+    "United States History", //category name
+    "c1", // category Id
+    );
+
+var cat2 = new category(
+    "Music", //category name
+    "c2" // category Id
+    );
+
+var cat3 = new category(
+    "Capitals of Countries", //category name
+    "c3" // category Id
+    );
+
+var cat4 = new category(
+    "Danny's Favorite Things", //category name
+    "c4" // category Id
+    );
+
+var cat5 = new category(
+    "Danny's Least Favorite Things", //category name
+    "c5" // category Id
+    );
+
+/// LOAD THE BOARD
+window.onload = function(){
+displayColumn(1, cat1.categoryName, cat1.categoryId);
+displayColumn(2, cat2.categoryName, cat2.categoryId);
+displayColumn(3, cat3.categoryName, cat3.categoryId);
+displayColumn(4, cat4.categoryName, cat4.categoryId);
+displayColumn(5, cat5.categoryName, cat5.categoryId);
+}
+
+/*
 function() {
     var questionId = $this.attr("id").val();
     var question = questionArray.find(id: questionId);
@@ -33,111 +166,9 @@ function() {
     var correctAnswer = $("#myModal").data("correct");
     if (answer === correctAnswer)
 }
-//master const object
-
-//Need an object for each category
-//Within each category object, need:
-    //categoryName
-    //categoryId
-    //questions
-    //correct answer
-    //all potential answers
+*/
 
 //APPENDING A GAMEBOARD COLUMN AS ITS OWN DIV
-
-//Loop (through an object containing these)
-
-const category = function(name, id, q1, a1, q2, a2, q3, a3, q4, a4, q5, a5) {
-this.categoryName = name;
-this.categoryId = id;
-this.question1 = q1;
-this.answer1 = a1;
-this.question2 = q2;
-this.answer2 = a2;
-this.question3 = q3;
-this.answer3 = a3;
-this.question4 = q4;
-this.answer4 = a4;
-this.question5 = q5;
-this.answer5 = a5;
-}
-
-var cat1 = new category(
-    "United States History", //category name
-    "c1", // category Id
-    "First African American President of the United States", // question 1
-    "Who is Barrack Obama?", // answer 1
-    "Year the United States gained its independence from the British Empire", // question 2
-    "1776", // answer 2
-    "Treaty that ended the Revolutionary War", // question 3
-    "Treaty of Paris", // answer 3
-    "President during the 19th and 20th century", // question 4
-    "Who was William McKinley?", // answer 4
-    "This was the last US Navy ship sunk as a result of WW2", // question 5
-    "What was the USS Bullhead?" // answer 5
-    );
-
-var cat2 = new category(
-    "Music", //category name
-    "c2", // category Id
-    "First African American President of the United States", // question 1
-    "Who is Barrack Obama?", // answer 1
-    "Year the United States gained its independence from the British Empire", // question 2
-    "1776", // answer 2
-    "Treaty that ended the Revolutionary War", // question 3
-    "Treaty of Paris", // answer 3
-    "President during the 19th and 20th century", // question 4
-    "Who was William McKinley?", // answer 4
-    "This was the last US Navy ship sunk as a result of WW2", // question 5
-    "What was the USS Bullhead?" // answer 5
-    );
-
-var cat3 = new category(
-    "Capitals of Countries", //category name
-    "c3", // category Id
-    "First African American President of the United States", // question 1
-    "Who is Barrack Obama?", // answer 1
-    "Year the United States gained its independence from the British Empire", // question 2
-    "1776", // answer 2
-    "Treaty that ended the Revolutionary War", // question 3
-    "Treaty of Paris", // answer 3
-    "President during the 19th and 20th century", // question 4
-    "Who was William McKinley?", // answer 4
-    "This was the last US Navy ship sunk as a result of WW2", // question 5
-    "What was the USS Bullhead?" // answer 5
-    );
-
-var cat4 = new category(
-    "Danny's Favorite Things", //category name
-    "c4", // category Id
-    "First African American President of the United States", // question 1
-    "Who is Barrack Obama?", // answer 1
-    "Year the United States gained its independence from the British Empire", // question 2
-    "1776", // answer 2
-    "Treaty that ended the Revolutionary War", // question 3
-    "Treaty of Paris", // answer 3
-    "President during the 19th and 20th century", // question 4
-    "Who was William McKinley?", // answer 4
-    "This was the last US Navy ship sunk as a result of WW2", // question 5
-    "What was the USS Bullhead?" // answer 5
-    );
-
-var cat5 = new category(
-    "Danny's Least Favorite Things", //category name
-    "c5", // category Id
-    "First African American President of the United States", // question 1
-    "Who is Barrack Obama?", // answer 1
-    "Year the United States gained its independence from the British Empire", // question 2
-    "1776", // answer 2
-    "Treaty that ended the Revolutionary War", // question 3
-    "Treaty of Paris", // answer 3
-    "President during the 19th and 20th century", // question 4
-    "Who was William McKinley?", // answer 4
-    "This was the last US Navy ship sunk as a result of WW2", // question 5
-    "What was the USS Bullhead?" // answer 5
-    );
-
-    
 //Append a div with Category Name
     //Append a 100 point div
         //Clicking on this div appends 100 point question to answer_board
@@ -162,24 +193,25 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
     }
 }
 
-displayColumn(1, cat1.categoryName, cat1.categoryId);
-displayColumn(2, cat2.categoryName, cat2.categoryId);
-displayColumn(3, cat3.categoryName, cat3.categoryId);
-displayColumn(4, cat4.categoryName, cat4.categoryId);
-displayColumn(5, cat5.categoryName, cat5.categoryId);
+
 
 //SELECTING A QUESTION
 //GIVEN I am on the gameboard page 
 //WHEN I click on a game block 
 //THEN makes question appear in footer
-var question = "question";
+
+
+/// User Interface ///
+
+/// Top-Level Application Code ///
+
 var showQuestion = function(columnNumber, categoryName, categoryId) {
     $('#question_board').append('<div id="myModal" class="modal"><div class="modal-content"><span class="close">&times;</span></div></div>');
     
 }
 
 var removeQuestion = function() {
-   $('#question_board').remove(question);
+  // $('#question_board').remove(question);
 }
 
 var modal = document.getElementById('myModal');
