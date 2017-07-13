@@ -311,13 +311,19 @@ function() {
     $("#myModal").data("correct", question.ac);
 
 }
+*/
 
-function() {
+var checkCorrect = function() {
     var answer = $(this).attr("id").val();
     var correctAnswer = $("#myModal").data("correct");
-    if (answer === correctAnswer)
+    if (answer === correctAnswer) {
+        alert("Correct!");
+    }
+    else {
+        alert("Incorrect.");
+    }
 }
-*/
+
 
 
 
@@ -342,8 +348,14 @@ function() {
         }
     }
 var showQuestion = function() {
-    $('#question').append(this);
     modal.style.display = "block";
+    //var question = questionArray.find(id: questionId);
+    $("#question").html(question.q);
+    $("#a1").html(question.a1);
+    $("#a2").html(question.a2);
+    $("#a3").html(question.a2);
+    $("#a4").html(question.a2);
+    $("#myModal").data("correct", question.ac);
 }
 
 var removeQuestion = function() {
