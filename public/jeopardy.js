@@ -285,7 +285,14 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
         if(i === 0) {
             $('#column' + columnNumber).append('<div class="category"> '+ categoryName + '</div><br>');
         } else {
-            $('#column' + columnNumber).append('<button class="game_block" id="' + categoryId + '' + i + '" onclick="showQuestion('+categoryId+')">'+ pointsWorth + '</button><br>');
+
+
+            var $gameblock = $('<button>');
+            $gameblock.addClass("game_block");
+            $gameblock.attr('id', categoryId + '' + i);
+            $gameblock.on("click", showQuestion);
+           // $('#column' + columnNumber).append(gameblock);
+            $gameblock.appendTo('#column' + columnNumber);
             pointsWorth +=100;
         }
     }
@@ -347,15 +354,19 @@ var checkCorrect = function() {
             modal.style.display = "none";
         }
     }
-var showQuestion = function() {
-    modal.style.display = "block";
-    //var question = questionArray.find(id: questionId);
-    $("#question").html(question.q);
+
+var showQuestion = function(event) {
+    $('#myModal').css('display', 'block');
+    var question = questionArray.show(function(question) {
+        return question.id === event.target.id;
+    });
+    $("#question").html("random");
+    console.log($('#question'));
     $("#a1").html(question.a1);
     $("#a2").html(question.a2);
-    $("#a3").html(question.a2);
-    $("#a4").html(question.a2);
-    $("#myModal").data("correct", question.ac);
+    $("#a3").html(question.a3);
+    $("#a4").html(question.a4);
+    $("#myModal").attr("correct", question.ac);
 }
 
 var removeQuestion = function() {
