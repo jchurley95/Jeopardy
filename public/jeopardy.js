@@ -321,7 +321,7 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
             $gameblock.attr('id', pgid);
             console.log($gameblock.id);
             $gameblock.on("click", function() {
-                $modal.show();
+                showQuestion;
             });
             $gameblock.html(pointsWorth);
             pointsWorth +=100;
@@ -340,16 +340,10 @@ var showQuestion = function() {
                 return question.id === pgid;
             });
 
-            var $close = $('<span>');
-            $close.html('<br> X');
-            $close.css('color', '#aaaaaa');
-            $close.css('float', 'right');
-            $close.css('font-size', '28px');
-            $close.css('font-weight', 'bold');
+            var $close = $('#closer');
             $close.on("click", function() {
                 $modal.css('display', "none");
             })
-            $close.appendTo($modalContent);
 
             var $questionSpace = $('<div>');
             $questionSpace.attr('id', 'question');
