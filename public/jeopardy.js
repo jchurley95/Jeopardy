@@ -332,40 +332,15 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
             $modal.attr('id', "q_modal" + categoryId + i);
             $modal.addClass("modal");
             $modal.hide();
-            $modal.css("border", "2px solid white");
-            $modal.css("position", "fixed");
-            $modal.css("z-index", "1");
-            $modal.css("padding-top", "100px");
-            $modal.css("left", "0");
-            $modal.css("top", "0");
-            $modal.css("width", "50%");
-            $modal.css("height", "50%");
-            $modal.css("overflow", "auto");
-            $modal.css("background-color", "rgb(0,0,0)");
-            $modal.css("background-color", "rgba(0,0,0,1)");
             $modal.appendTo($('#question_board'));
 
             var $modalContent = $('<div>');
             $modalContent.addClass("modal-content");
-            $modalContent.css('color', 'black');
-            $modalContent.css('background-color', '#fefefe');
-            $modalContent.css('margin', 'auto');
-            $modalContent.css('padding', '20px');
-            $modalContent.css('border', '1px solid #888');
-            $modalContent.css('height', '80%');
-            $modalContent.css('width', '80%');
             $modalContent.appendTo($modal);
 
             var question = questionArray.filter(function(question) {
-                console.log('%c INSIDE THE FUNCTION QUESTION ID ', 'background: #222; color: #bada55', question.id)
-                console.log(($gameblock).id + "INSIDE THE FUNCTION GAMEBLOCK");
                 return question.id === pgid;
-                
             });
-
-
-            console.log(($gameblock).attr('id') + 'GAME BLOCK outside');
-
 
             var $close = $('<span>');
             $close.html('<br> X');
