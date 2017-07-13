@@ -329,6 +329,10 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
         }
     }
 }
+ var $close = $('#closer');
+            $close.on("click", function() {
+                $('#q_modal').hide();
+            })
 
 var showQuestion = function(event) {
 
@@ -340,11 +344,7 @@ var showQuestion = function(event) {
                 return question.id === event.target.id;
             });
 
-            var $close = $('#closer');
-            $close.on("click", function() {
-                $modal.hide();
-            })
-
+            
             var $questionSpace = $('<div>');
             $questionSpace.attr('id', 'question');
             $questionSpace.html("question.q");
