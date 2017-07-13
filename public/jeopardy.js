@@ -280,7 +280,7 @@ var questionArray = [ /// Array of all questions as their own object with id, po
     {
         id: 55,
         pointsWorth: 500,
-        q: "",
+        q: "hello",
         a1: "Who is George Washington",
         a2: "Who is Barrack Obama",
         a3: "Who is Hillary Clinton",
@@ -319,52 +319,63 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
             var gid = categoryId + '' + i;
             var pgid = parseInt(gid);
             $gameblock.attr('id', pgid);
-            $gameblock.on("click", function() {
-                showQuestion();
-            });
             $gameblock.html(pointsWorth);
             pointsWorth +=100;
+
+            $gameblock.on("click", function() {
+                showQuestion(event);
+            }
+            );
+
             $gameblock.appendTo('#column' + columnNumber);
+
         }
     }
 }
 
+var $close = $('#closer');
+            $close.on("click", function() {
+                $('#q_modal').hide();
+            });
 
 var showQuestion = function(event) {
-            
-            var question = questionArray.filter(function(question) {
-                return question.id === this.id;
-            });
-
-            var $close = $('#closer');
-            $close.on("click", function() {
-            $('#q_modal').hide();
-            });
 
             var $modal = $('#q_modal');
-            $modal.show();
+                $modal.show();
+
+            var question = questionArray.filter(function(question) {
+                return question.id === event.currentTarget.id;
+            });
+
+            console.log(question.id);
+            console.log(this.id);
+            console.log(event.target.id);
+            console.log(questionArray[0]);
+            // var $modal = $('#q_modal');
+            
 
             var $modalContent = $('#modal_c');
             
             var $questionSpace = $('#q');
-            $questionSpace.html(question.q);
+            $questionSpace.attr(questionArray[0].q);
 
             var $answer1 = $('#a1');
-            $answer1.html(question.a1);
+            $answer1.html(questionArray[0].a1);
             $answer1.on("click", checkCorrect);
 
             var $answer2 = $('#a2');
-            $answer2.html(question.a2);
+            $answer2.html(questionArray[0].a2);
             $answer2.on("click", checkCorrect);
 
             var $answer3 = $('#a3');
-            $answer3.html(question.a3);
+            $answer3.html(questionArray[0].a3);
             $answer3.on("click", checkCorrect);
 
 
             var $answer4 = $('#a4');
-            $answer4.html(question.a4);
+            $answer4.html(questionArray[0].a4);
             $answer4.on("click", checkCorrect);
+
 }
 
 //$("#q_modal").attr("correct", question.ac);
