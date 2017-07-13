@@ -329,7 +329,8 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
         }
     }
 }
-           
+
+var showQuestion = function() {
 
             var $modal = $('#q_modal');
             $modal.attr('id', "q_modal" + categoryId + i);
@@ -381,7 +382,7 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
             $answer4.html(question.a4);
             $answer4.on("click", checkCorrect);
             $answer4.appendTo($modalContent);
-
+}
             //$("#q_modal").attr("correct", question.ac);
 
 // window.onclick = function(event) {
