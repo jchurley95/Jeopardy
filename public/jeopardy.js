@@ -36,7 +36,7 @@ var cat5 = new category(
     "5" // category Id
     );
 
-var questionArray = [
+var questionArray = [ /// Array of all questions as their own object with id, points, q, a's, and correct a
     {
         id: 11,
         pointsWorth: 100,
@@ -329,42 +329,46 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
         }
     }
 }
- var $close = $('#closer');
-            $close.on("click", function() {
-                $('#q_modal').hide();
-            })
-var question = questionArray.filter(function(event) {
-                return question.id === event.target.id;
-            });
-            
+
+// var $close = $('#closer');
+// $close.on("click", function() {
+//     $('#q_modal').hide();
+// })
+
+
 var showQuestion = function(event) {
+            
+            var question = questionArray.filter(function(question) {
+                return question.id === this.id;
+            });
+
+            var $close = $('#closer');
+            $close.on("click", function() {
+            $('#q_modal').hide();
+            })
 
             var $modal = $('#q_modal');
             $modal.show();
             var $modalContent = $('#modal_c');
             
-            var $questionSpace = $('<div>');
-            $questionSpace.attr('id', 'question');
-            $questionSpace.html("question.q");
+            var $questionSpace = $('#question_space');
+            $questionSpace.attr('id', 'q');
+            $questionSpace.html(question.q);
 
-            var $answer1 = $('<button>');
-            $answer1.attr('id', 'a1');
+            var $answer1 = $('#a1');
             $answer1.html(question.a1);
             $answer1.on("click", checkCorrect);
 
-            var $answer2 = $('<button>');
-            $answer2.attr('id', 'a2');
+            var $answer2 = $('#a2');
             $answer2.html(question.a2);
             $answer2.on("click", checkCorrect);
 
-            var $answer3 = $('<button>');
-            $answer3.attr('id', 'a3');
+            var $answer3 = $('#a3');
             $answer3.html(question.a3);
             $answer3.on("click", checkCorrect);
 
 
-            var $answer4 = $('<button>');
-            $answer4.attr('id', 'a4');
+            var $answer4 = $('#a4');
             $answer4.html(question.a4);
             $answer4.on("click", checkCorrect);
 }
