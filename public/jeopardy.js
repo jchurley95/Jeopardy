@@ -48,38 +48,38 @@ var questionArray = [
     },
     {
         id: "21",
-        q: "",
-        a1: "Who is George Washington",
-        a2: "Who is Barrack Obama",
-        a3: "Who is Hillary Clinton",
-        a4: "Who is Danny Hurley",
-        ac: "a2"
+        q: 'Recorded the song "Hey Jude"' ,
+        a1: "Who is The Beatles",
+        a2: "Who is The Rolling Stones",
+        a3: "Who is Lil' Yachty",
+        a4: "Who is Kanye West",
+        ac: "a1"
     },
     {
         id: "22",
-        q: "",
-        a1: "Who is George Washington",
-        a2: "Who is Barrack Obama",
-        a3: "Who is Hillary Clinton",
-        a4: "Who is Danny Hurley",
+        q: '"Panda, panda, I got..."',
+        a1: "What is broads in Atlanta",
+        a2: "What is respectable, young women in the UK",
+        a3: "What is nice ladies in Japan",
+        a4: "What is Danny Hurley",
         ac: "a2"
     },
     {
         id: "23",
-        q: "",
-        a1: "Who is George Washington",
-        a2: "Who is Barrack Obama",
-        a3: "Who is Hillary Clinton",
-        a4: "Who is Danny Hurley",
-        ac: "a2"
+        q: "Studio where the Beatles recorded 191 songs.",
+        a1: "What is Downton Abby?",
+        a2: "What is Abby Road?",
+        a3: "What is Muscle Schoals?",
+        a4: "What is Danny Hurley's Home Studio?",
+        ac: "a1"
     },
     {
         id: "24",
-        q: "",
-        a1: "Who is George Washington",
-        a2: "Who is Barrack Obama",
-        a3: "Who is Hillary Clinton",
-        a4: "Who is Danny Hurley",
+        q: "What is Jay-z’s real name?",
+        a1: "What is Shaun Carter?",
+        a2: "What is Led Zeppelin",
+        a3: "What is Jake Gyllenhall",
+        a4: "What is Danny Hurley",
         ac: "a2"
     },
     {
@@ -93,6 +93,132 @@ var questionArray = [
     },
     {
         id: "31",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "32",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "33",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "34",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "35",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "41",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "42",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "43",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "44",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "45",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "51",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "52",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "53",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "54",
+        q: "",
+        a1: "Who is George Washington",
+        a2: "Who is Barrack Obama",
+        a3: "Who is Hillary Clinton",
+        a4: "Who is Danny Hurley",
+        ac: "a2"
+    },
+    {
+        id: "55",
         q: "",
         a1: "Who is George Washington",
         a2: "Who is Barrack Obama",
@@ -116,37 +242,62 @@ const category = function(name, id) {
 
 var cat1 = new category(
     "United States History", //category name
-    "c1", // category Id
+    "1", // category Id
     );
 
 var cat2 = new category(
     "Music", //category name
-    "c2" // category Id
+    "2" // category Id
     );
 
 var cat3 = new category(
     "Capitals of Countries", //category name
-    "c3" // category Id
+    "3" // category Id
     );
 
 var cat4 = new category(
     "Danny's Favorite Things", //category name
-    "c4" // category Id
+    "4" // category Id
     );
 
 var cat5 = new category(
     "Danny's Least Favorite Things", //category name
-    "c5" // category Id
+    "5" // category Id
     );
 
 /// LOAD THE BOARD
+//APPENDING A GAMEBOARD COLUMN AS ITS OWN DIV
+//Append a div with Category Name
+    //Append a 100 point div
+        //Clicking on this div appends 100 point question to answer_board
+    //Append a 200 point div
+        //Clicking on this div appends 200 point question to answer_board
+    //Append a 300 point div
+        //Clicking on this div appends 300 point question to answer_board
+    //Append a 400 point div
+        //Clicking on this div appends 400 point question to answer_board
+    //Append a 500 point div
+        //Clicking on this div appends 500 point question to answer_board
+
+var displayColumn= function(columnNumber, categoryName, categoryId) {
+    var pointsWorth = 100;
+    for(var i = 0; i < 6; i++){
+        if(i === 0) {
+            $('#column' + columnNumber).append('<div class="category"> '+ categoryName + '</div><br>');
+        } else {
+            $('#column' + columnNumber).append('<button class="game_block" id="' + categoryId + '' + i + '" onclick="showQuestion('+categoryId+')">'+ pointsWorth + '</button><br>');
+            pointsWorth +=100;
+        }
+    }
+}
+
 window.onload = function(){
 displayColumn(1, cat1.categoryName, cat1.categoryId);
 displayColumn(2, cat2.categoryName, cat2.categoryId);
 displayColumn(3, cat3.categoryName, cat3.categoryId);
 displayColumn(4, cat4.categoryName, cat4.categoryId);
 displayColumn(5, cat5.categoryName, cat5.categoryId);
-}
+};
 
 /*
 function() {
@@ -168,31 +319,6 @@ function() {
 }
 */
 
-//APPENDING A GAMEBOARD COLUMN AS ITS OWN DIV
-//Append a div with Category Name
-    //Append a 100 point div
-        //Clicking on this div appends 100 point question to answer_board
-    //Append a 200 point div
-        //Clicking on this div appends 200 point question to answer_board
-    //Append a 300 point div
-        //Clicking on this div appends 300 point question to answer_board
-    //Append a 400 point div
-        //Clicking on this div appends 400 point question to answer_board
-    //Append a 500 point div
-        //Clicking on this div appends 500 point question to answer_board
-
-var displayColumn= function(columnNumber, categoryName, categoryId) {
-    var pointsWorth = 100;
-    for(var i = 0; i < 6; i++){
-        if(i === 0) {
-            $('#column' + columnNumber).append('<div class="category"> '+ categoryName + '</div><br>');
-        } else {
-            $('#column' + columnNumber).append('<button class="game_block" id="' + categoryId + '-' + i + '" onclick="showQuestion('+categoryId+')">'+ pointsWorth + '</button><br>');
-            pointsWorth +=100;
-        }
-    }
-}
-
 
 
 //SELECTING A QUESTION
@@ -204,30 +330,26 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
 /// User Interface ///
 
 /// Top-Level Application Code ///
+    var modal = document.getElementById('myModal');
+    var span = document.getElementsByClassName("close")[0];
 
-var showQuestion = function(columnNumber, categoryName, categoryId) {
-    $('#question_board').append('<div id="myModal" class="modal"><div class="modal-content"><span class="close">&times;</span></div></div>');
-    
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+var showQuestion = function() {
+    $('#question').append(this);
+    modal.style.display = "block";
 }
 
 var removeQuestion = function() {
   // $('#question_board').remove(question);
 }
 
-var modal = document.getElementById('myModal');
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-span.onclick = function() {
-    modal.style.display = "none";
-}
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
 
 //SUBMITTING CORRECT ANSWER
 //GIVEN I am on the page for answering a question 
