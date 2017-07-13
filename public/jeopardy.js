@@ -330,78 +330,91 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
             var $gameblock = $('<button>');
             $gameblock.addClass("game_block");
             $gameblock.attr('id', categoryId + '' + i);
-            //$gameblock.on("click", showQuestion);
+            $gameblock.on("click", function() {
+                $modal.show();
+            });
             $gameblock.html(pointsWorth);
             pointsWorth +=100;
             $gameblock.appendTo('#column' + columnNumber);
-            $gameblock.on("click", function() {
-                $('#myModal').css('display', 'block');
-            })
+           
 
             var $modal = $('<div>');
-            $modal.attr('id', "q_modal");
+            $modal.attr('id', "q_modal" + categoryId + i);
             $modal.addClass("modal");
-            $modal.attr("display", "none");
+            $modal.hide();
             $modal.attr("position", "fixed");
             $modal.attr("z-index", "1");
             $modal.attr("padding-top", "100px");
             $modal.attr("left", "0");
             $modal.attr("top", "0");
-            $modal.attr("width", "100%");
-            $modal.attr("height", "100%");
+            $modal.attr("width", "50%");
+            $modal.attr("height", "50%");
             $modal.attr("overflow", "auto");
             $modal.attr("background-color", "rgb(0,0,0)");
-            $modal.attr("background-color", "rgba(0,0,0,0.4)");
-            $modal.appendTo($gameblock);
+            $modal.attr("background-color", "rgba(0,0,0,1)");
+            $modal.appendTo($('#question_board'));
 
             var $modalContent = $('<div>');
             $modalContent.addClass("modal-content");
-            $modalContent.appendTo($modal);
+            $modalContent.attr('color', 'black');
+            $modalContent.attr('background-color', '#fefefe');
+            $modalContent.attr('margin', 'auto');
+            $modalContent.attr('padding', '20px');
+            $modalContent.attr('border', '1px solid #888');
+            $modalContent.attr('width', '80%');
+             $modalContent.appendTo($modal);
+            
 
             var $close = $('<span>');
-            $close.html("$times;");
-            $close.appendTo($modalContent);
+            $close.html('X');
+            $close.attr('color', '#aaaaaa');
+            $close.attr('float', 'right');
+            $close.attr('font-size', '28px');
+            $close.attr('font-weight', 'bold');
             $close.on("click", function() {
                 $modal.css('display', "none");
             })
+            $close.appendTo($modalContent);
+
+            var question = questionArray.filter(function(question) {
+                return question.id === $gameblock.id;
+            });
 
             var $questionSpace = $('<div>');
             $questionSpace.attr('id', 'question');
+            $questionSpace.html(question.q);
             $questionSpace.appendTo($modalContent);
+
+            console.log($('#questionSpace'));
 
             var $answer1 = $('<button>');
             $answer1.attr('id', 'a1');
+            $answer1.html(question.a1);
+            $answer1.on("click", checkCorrect);
             $answer1.appendTo($modalContent);
 
             var $answer2 = $('<button>');
             $answer2.attr('id', 'a2');
+            $answer2.html(question.a2);
+            $answer2.on("click", checkCorrect);
             $answer2.appendTo($modalContent);
 
             var $answer3 = $('<button>');
             $answer3.attr('id', 'a3');
+            $answer3.html(question.a3);
+            $answer3.on("click", checkCorrect);
             $answer3.appendTo($modalContent);
 
 
             var $answer4 = $('<button>');
             $answer4.attr('id', 'a4');
+            $answer4.html(question.a4);
+            $answer4.on("click", checkCorrect);
             $answer4.appendTo($modalContent);
 
+            //$("#q_modal").attr("correct", question.ac);
         }   
     }
-}
-
-var showQuestion = function(event) {
-    $('#myModal').css('display', 'block');
-    var question = questionArray.filter(function(question) {
-        return question.id === event.target.id;
-    });
-    $("#question").html(question.q);
-    console.log($('#question'));
-    $("#a1").html(question.a1);
-    $("#a2").html(question.a2);
-    $("#a3").html(question.a3);
-    $("#a4").html(question.a4);
-    $("#myModal").attr("correct", question.ac);
 }
 
 // window.onclick = function(event) {
@@ -418,8 +431,8 @@ displayColumn(4, cat4.categoryName, cat4.categoryId);
 displayColumn(5, cat5.categoryName, cat5.categoryId);
 };
 
-var checkCorrect = function() {
-    var answer = $(this).attr("id").val();
+var checkCorrect = function(event) {
+    var answer = event.attr("id").val();
     var correctAnswer = $("#myModal").data("correct");
     if (answer === correctAnswer) {
         alert("Correct!");
