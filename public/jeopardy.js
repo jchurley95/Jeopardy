@@ -326,17 +326,14 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
             $gameblock.html(pointsWorth);
             pointsWorth +=100;
             $gameblock.appendTo('#column' + columnNumber);
+        }
+    }
+}
            
 
-            var $modal = $('<div>');
+            var $modal = $('#q_modal');
             $modal.attr('id', "q_modal" + categoryId + i);
-            $modal.addClass("modal");
-            $modal.hide();
-            $modal.appendTo($('#question_board'));
-
-            var $modalContent = $('<div>');
-            $modalContent.addClass("modal-content");
-            $modalContent.appendTo($modal);
+            var $modalContent = $('#modal_c');
 
             var question = questionArray.filter(function(question) {
                 return question.id === pgid;
@@ -386,9 +383,6 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
             $answer4.appendTo($modalContent);
 
             //$("#q_modal").attr("correct", question.ac);
-        }   
-    }
-}
 
 // window.onclick = function(event) {
 //     if (event.target == $modal) {
