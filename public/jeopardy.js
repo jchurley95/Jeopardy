@@ -5,6 +5,9 @@
     //categoryName
     //categoryId
 
+var playerOneScore = 0;
+var playerTwoScore = 0;
+var playerOneUp = true;
 
 const category = function(name, id) {
     this.categoryName = name;
@@ -107,7 +110,7 @@ var questionArray = [ /// Array of all questions as their own object with id, po
         a2: "What is respectable, young women in the UK",
         a3: "What is nice ladies in Japan",
         a4: "What is Danny Hurley",
-        ac: "a2"
+        ac: "a1"
     },
     {
         id: 23,
@@ -117,7 +120,7 @@ var questionArray = [ /// Array of all questions as their own object with id, po
         a2: "What is Abby Road?",
         a3: "What is Muscle Schoals?",
         a4: "What is Danny Hurley's Home Studio?",
-        ac: "a1"
+        ac: "a2"
     },
     {
         id: 24,
@@ -127,7 +130,7 @@ var questionArray = [ /// Array of all questions as their own object with id, po
         a2: "What is Led Zeppelin",
         a3: "What is Jake Gyllenhall",
         a4: "What is Danny Hurley",
-        ac: "a2"
+        ac: "a1"
     },
     {
         id: 25,
@@ -137,7 +140,7 @@ var questionArray = [ /// Array of all questions as their own object with id, po
         a2: 'Who is "Respect"?',
         a3: 'Who is "Respect Me Please"?',
         a4: 'Who is "Respect Youself"?',
-        ac: "a2"
+        ac: "a4"
     },
     // CATEGORY 3 CAPITALS OF COUNTRIES
     {
@@ -148,7 +151,7 @@ var questionArray = [ /// Array of all questions as their own object with id, po
         a2: "What is Belize?",
         a3: "What is Belgium?",
         a4: "What is Egypt?",
-        ac: "a2"
+        ac: "a4"
     },
     {
         id: 32,
@@ -228,7 +231,7 @@ var questionArray = [ /// Array of all questions as their own object with id, po
         a1: "What are amps?",
         a2: "What are lisosomes?",
         a3: "What are photons?",
-        a4: "What?",
+        a4: "What? Huh?",
         ac: "a3"
     },
     {
@@ -345,19 +348,42 @@ window.onload = function(){
     displayColumn(4, cat4.categoryName, cat4.categoryId);
     displayColumn(5, cat5.categoryName, cat5.categoryId);
     checkCorrect();
+    initiateScores(playerOneScore, playerTwoScore);
 };
+
+var initiateScores = function(playerOneScore, playerTwoScore) {
+    $('#score_one').html("Player1 Score: " + playerOneScore);
+    $('#score_two').html("Player2 Score: " + playerTwoScore);
+    alert("Welcome to Jeopardy");
+    alert("Player1 is up first");
+}
 
 var checkCorrect = function() {
     for (var i = 1; i <= 4; i++) { // Hassan helped here a lot
         $(`#a${i}`).click(function(event) {
-            console.log('this.id is ' + this.id);
-            console.log('correctAnswer is ' + $('#q_modal').attr('correctAnswer'));
-            if (this.id == $('#q_modal').attr('correctAnswer')) {
+            if (playerOneUp === true && this.id == $('#q_modal').attr('correctAnswer')) {
+                playerOneScore += 100;
                 alert("Correct!");
-            } else {
-                alert("Incorrect!");
+                $('#score_one').html("Player1 Score: " + playerOneScore);
+                $('#q_modal').hide();
+            } else if(playerOneUp === true && this.id != $('#q_modal').attr('correctAnswer')) {
+                playerOneUp = false;
+                playerOneScore -= 100;
+                alert("Incorrect! Player2's turn to answer!");
+                $('#score_one').html("Player1 Score: " + playerOneScore);
+            } else if(playerOneUp === false && this.id === $('#q_modal').attr('correctAnswer')) {
+                playerOneUp = false;
+                alert("Correct!");
+                playerTwoScore += 100;
+                $('#score_two').html("Player2 Score: " + playerTwoScore);
+                $('#q_modal').hide();
+            } else if(playerOneUp === false && this.id != $('#q_modal').attr('correctAnswer')) {
+                playerOneUp = true;
+                playerTwoScore -= 100;
+                alert("Incorrect! Player1's turn to answer!");
+                $('#score_two').html("Player2 Score: " + playerTwoScore);
             }
-        })
+        }) 
     }
 }
 
@@ -374,40 +400,22 @@ var showQuestion = function(event) {
         return question.id == event.target.id;
     });
     question = question[0];
-
     var $close = $('#closer');
         $close.on("click", function() {
         $('#q_modal').hide();
     });
-
     var $modalContent = $('#modal_c');
-    
     $('#q').text(question.q);
-
-
-    //SUBMITTING CORRECT/INCORRECT ANSWER
-    //GIVEN I am on the modal for answering a question 
-    //WHEN I submit my answer 
-    //AND answer is correct 
-    //THEN Tells me answer is correct or incorrect
-    //AND adds/subtracts score
-
     var correctAnswer = question.ac;
-    console.log(correctAnswer);
-
     $modal.attr('correctAnswer', correctAnswer);
     var $answer1 = $('#a1');
     $answer1.html(question.a1);
-
     var $answer2 = $('#a2');
     $answer2.html(question.a2);
-
     var $answer3 = $('#a3');
     $answer3.html(question.a3);
-
     var $answer4 = $('#a4');
     $answer4.html(question.a4);
-
 }
 
 

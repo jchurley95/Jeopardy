@@ -20,10 +20,10 @@ h1 {
    border-right: 2px solid white;
    border-radius: 25px;
    padding: 10px;
-   width: 400px;
    display: flex;
    flex-direction: row;
    justify-content: space-around;
+   text-align: center;
 }
 
 .score {
@@ -31,7 +31,7 @@ h1 {
     border-radius: 25px;
     padding: 10px;
     margin: 10px 30px;
-    width: 300px;
+    width: 175px;
 }
 
 main {
