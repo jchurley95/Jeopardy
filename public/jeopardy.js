@@ -370,6 +370,9 @@ window.onload = function(){
 //SELECTING A QUESTION
 var showQuestion = function(event) { //GIVEN I am on the gameboard page //WHEN I click on a game block //THEN makes question appear in footer
     event.target.disabled = true; //Disables the button's onclick functionality so it can't be clicked again
+    //event.target.css("background", "black");
+    console.log(event.target);
+    event.target.style.color = 'rgba(225,225,225,0.3)';
     questionsRemaining -= 1;
     var $modal = $('#q_modal'); // Sets modal = a variable
     $modal.show(); // Changes modal's display value from none to block       
@@ -397,29 +400,21 @@ var showQuestion = function(event) { //GIVEN I am on the gameboard page //WHEN I
     var $points = $('#points_worth');
     $points.text(question.pointsWorth);
     $('.answer').attr('points', question.pointsWorth);
-    console.log('points attr are ' + question.pointsWorth);
-    console.log('points jquery are ' + $answer4.attr('points'));
-    gameover();
 }
 
 var gameover = function() {
-    if (questionsRemaining <0) {
-        if (playerOneScore > playerTwoScore){
-            alert("GAME OVER! PLAYER ONE WINS");
-        } else if (playerTwoScore > playerOneScore) {
-            alert("GAME OVER! PLAYER TWO WINS");
-        } else {
-            alert("GAME OVER! NOBODY WINS!");
-        }
+    if (playerOneScore > playerTwoScore){
+        alert("GAME OVER! PLAYER ONE WINS");
+    } else if (playerTwoScore > playerOneScore) {
+        alert("GAME OVER! PLAYER TWO WINS");
+    } else {
+        alert("GAME OVER! NOBODY WINS!");
     }
 }
 
 var checkCorrect = function() { //Checks to see if the answer selected equals the correct answer for that question object
     for (var i = 1; i <= 4; i++) { // Hassan helped here a lot
          $(`#a${i}`).click(function(event) {
-             console.log(this);
-             console.log("id in checkCorrect: " + this.id);
-             console.log("points in checkCorrect: " + $(this).attr('points'));
             if (playerOneUp === true && this.id == $('#q_modal').attr('correctAnswer')) {
                 playerOneScore += parseInt($(this).attr('points'), 10);
                 alert("Correct!");
@@ -443,5 +438,8 @@ var checkCorrect = function() { //Checks to see if the answer selected equals th
                 $('#score_two').html("Player2 Score: " + playerTwoScore);
             }
         }) 
+    }
+    if (questionsRemaining === 0){
+        gameover();
     }
 }
