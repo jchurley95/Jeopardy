@@ -1,6 +1,9 @@
 
 body {
-    background-color: blue;
+    background-image: background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(blue));
+    background-image: -webkit-linear-gradient(top, black, blue);
+    background-image: -moz-linear-gradient(top, black, blue);
+    background-image: linear-gradient(to bottom, black, blue);;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
