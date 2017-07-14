@@ -289,6 +289,7 @@ var questionArray = [ /// Array of all questions as their own object with id, po
     }
 ];
 
+/// User Interface ///
 /// LOAD THE BOARD
 //APPENDING A GAMEBOARD COLUMN AS ITS OWN DIV
 //Append a div with Category Name
@@ -323,12 +324,7 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
             pointsWorth +=100;
 
             $gameblock.on("click", function() {
-                showQuestion(event);
-                var $modal = $('#q_modal');
-                $modal.show();
-                // questionArray.filter(this.id){
-                    
-
+                showQuestion(event);                    
                 });
 
             $gameblock.appendTo('#column' + columnNumber);
@@ -337,96 +333,114 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
     }
 }
 
-var showQuestion = function(event) {
-            console.log('$this is: ');
-            console.log($(this));
-            console.log('event.target is: ');
-            console.log(event.target);
-            var question = questionArray.filter(function(question) {
-                return question.id == event.target.id;
-            });
-            question = question[0];
-  
-            var $close = $('#closer');
-                $close.on("click", function() {
-                $('#q_modal').hide();
-            });
-
-            var $modalContent = $('#modal_c');
-            
-            $('#q').text(question.q);
-
-            var $answer1 = $('#a1');
-            $answer1.html(question.a1);
-            $answer1.on("click", checkCorrect);
-
-            var $answer2 = $('#a2');
-            $answer2.html(question.a2);
-            $answer2.on("click", checkCorrect);
-
-            var $answer3 = $('#a3');
-            $answer3.html(question.a3);
-            $answer3.on("click", checkCorrect);
-
-
-            var $answer4 = $('#a4');
-            $answer4.html(question.a4);
-            $answer4.on("click", checkCorrect);
-
-}
-
-//$("#q_modal").attr("correct", question.ac);
-
-
-
 window.onload = function(){
-$('#q_modal').hide();
-displayColumn(1, cat1.categoryName, cat1.categoryId);
-displayColumn(2, cat2.categoryName, cat2.categoryId);
-displayColumn(3, cat3.categoryName, cat3.categoryId);
-displayColumn(4, cat4.categoryName, cat4.categoryId);
-displayColumn(5, cat5.categoryName, cat5.categoryId);
-};
-
-var checkCorrect = function(event) {
-    // var answer = event.target.attr("id").val();
-    // var correctAnswer = $("#q_modal").attr("ac").val();
-    // console.log(answer);
-    // console.log(ac);
-    // if (answer === correctAnswer) {
-    //     alert("Correct!");
-    // }
-    // else {
-    //     alert("Incorrect.");
-    // }
-}
-
-
-
+    $('#q_modal').hide();
+    displayColumn(1, cat1.categoryName, cat1.categoryId);
+    displayColumn(2, cat2.categoryName, cat2.categoryId);
+    displayColumn(3, cat3.categoryName, cat3.categoryId);
+    displayColumn(4, cat4.categoryName, cat4.categoryId);
+    displayColumn(5, cat5.categoryName, cat5.categoryId);
+    };
+    for (var i = 1; i <= 4; i++) {
+        $(`#a${i}`).click(function(event) {
+            console.log('this.id is ' + this.id);
+            console.log('correctAnswer is ' + $('#q_modal').attr('correctAnswer'));
+            if (this.id == $('#q_modal').attr('correctAnswer')) {
+                alert("Correct!");
+            } else {
+                alert("Incorrect!");
+            }
+        })
+    }
+/// Top-Level Application Code ///
 
 //SELECTING A QUESTION
 //GIVEN I am on the gameboard page 
 //WHEN I click on a game block 
 //THEN makes question appear in footer
+var showQuestion = function(event) {
+    var $modal = $('#q_modal');
+    $modal.show();       
+    var question = questionArray.filter(function(question) {
+        return question.id == event.target.id;
+    });
+    console.log("the question array is: " + question);
+    question = question[0];
+
+    console.log("the question variable is: " + question);
+
+    var $close = $('#closer');
+        $close.on("click", function() {
+        $('#q_modal').hide();
+    });
+
+    var $modalContent = $('#modal_c');
+    
+    $('#q').text(question.q);
 
 
-/// User Interface ///
+    //SUBMITTING CORRECT ANSWER
+    //GIVEN I am on the page for answering a question 
+    //WHEN I submit my answer 
+    //AND answer is correct 
+    //THEN Tells me answer is correct 
+    //AND adds to my score
 
-/// Top-Level Application Code ///
+    //SUBMITTING INCORRECT ANSWER
+    //GIVEN I am on the page for answering a question 
+    //WHEN I submit my answer 
+    //AND answer is incorrect 
+    //THEN Tells me answer is incorrect 
+    //AND subtracts points from my score
+
+    var correctAnswer = question.ac;
+    console.log(correctAnswer);
+
+    $modal.attr('correctAnswer', correctAnswer);
+    var $answer1 = $('#a1');
+    $answer1.html(question.a1);
+    // $answer1.on("click", function() {
+    //     if (this.id === correctAnswer) {
+    //         alert("Correct!");
+    //     } else {
+    //     alert("Incorrect!");
+    //     }
+    // });
+
+    var $answer2 = $('#a2');
+    $answer2.html(question.a2);
+    // $answer2.on("click", function() {
+
+    //     if (this.id === correctAnswer) {
+    //         alert("Correct!");
+    //     } else {
+    //     alert("Incorrect!");
+    //     }
+    // });
+
+    var $answer3 = $('#a3');
+    $answer3.html(question.a3);
+    // $answer3.on("click", function() {
+    //     if (this.id === correctAnswer) {
+    //         alert("Correct!");
+    //     } else {
+    //     alert("Incorrect!");
+    //     }
+    // });
 
 
-//SUBMITTING CORRECT ANSWER
-//GIVEN I am on the page for answering a question 
-//WHEN I submit my answer 
-//AND answer is correct 
-//THEN Tells me answer is correct 
-//AND adds to my score
+    var $answer4 = $('#a4');
+    $answer4.html(question.a4);
+    // $answer4.on("click", function() {
+    //     if (this.id === correctAnswer) {
+    //         alert("Correct!");
+    //     } else {
+    //     alert("Incorrect!");
+    //     }
+    // });
+
+}
 
 
-//SUBMITTING INCORRECT ANSWER
-//GIVEN I am on the page for answering a question 
-//WHEN I submit my answer 
-//AND answer is incorrect 
-//THEN Tells me answer is incorrect 
-//AND subtracts points from my score
+
 
