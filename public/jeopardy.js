@@ -364,10 +364,7 @@ var showQuestion = function(event) {
     var question = questionArray.filter(function(question) {
         return question.id == event.target.id;
     });
-    console.log("the question array is: " + question);
     question = question[0];
-
-    console.log("the question variable is: " + question);
 
     var $close = $('#closer');
         $close.on("click", function() {
@@ -379,19 +376,12 @@ var showQuestion = function(event) {
     $('#q').text(question.q);
 
 
-    //SUBMITTING CORRECT ANSWER
-    //GIVEN I am on the page for answering a question 
+    //SUBMITTING CORRECT/INCORRECT ANSWER
+    //GIVEN I am on the modal for answering a question 
     //WHEN I submit my answer 
     //AND answer is correct 
-    //THEN Tells me answer is correct 
-    //AND adds to my score
-
-    //SUBMITTING INCORRECT ANSWER
-    //GIVEN I am on the page for answering a question 
-    //WHEN I submit my answer 
-    //AND answer is incorrect 
-    //THEN Tells me answer is incorrect 
-    //AND subtracts points from my score
+    //THEN Tells me answer is correct or incorrect
+    //AND adds/subtracts score
 
     var correctAnswer = question.ac;
     console.log(correctAnswer);
@@ -399,45 +389,15 @@ var showQuestion = function(event) {
     $modal.attr('correctAnswer', correctAnswer);
     var $answer1 = $('#a1');
     $answer1.html(question.a1);
-    // $answer1.on("click", function() {
-    //     if (this.id === correctAnswer) {
-    //         alert("Correct!");
-    //     } else {
-    //     alert("Incorrect!");
-    //     }
-    // });
 
     var $answer2 = $('#a2');
     $answer2.html(question.a2);
-    // $answer2.on("click", function() {
-
-    //     if (this.id === correctAnswer) {
-    //         alert("Correct!");
-    //     } else {
-    //     alert("Incorrect!");
-    //     }
-    // });
 
     var $answer3 = $('#a3');
     $answer3.html(question.a3);
-    // $answer3.on("click", function() {
-    //     if (this.id === correctAnswer) {
-    //         alert("Correct!");
-    //     } else {
-    //     alert("Incorrect!");
-    //     }
-    // });
-
 
     var $answer4 = $('#a4');
     $answer4.html(question.a4);
-    // $answer4.on("click", function() {
-    //     if (this.id === correctAnswer) {
-    //         alert("Correct!");
-    //     } else {
-    //     alert("Incorrect!");
-    //     }
-    // });
 
 }
 
