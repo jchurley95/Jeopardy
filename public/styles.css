@@ -138,19 +138,15 @@ p {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    text-align: center;
 }
 
-/* The Close Button */
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+.answer {
+    font-size: 12px;
 }
-
-.close:hover,
-.close:focus {
-    color: #000;
+.answer:hover{
+    color: green;
     text-decoration: none;
     cursor: pointer;
+    font-size: 14px;
 }
