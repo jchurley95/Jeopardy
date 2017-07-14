@@ -37,6 +37,7 @@ var cat5 = new category(
     );
 
 var questionArray = [ /// Array of all questions as their own object with id, points, q, a's, and correct a
+    // CATEGORY 1 UNITED STATES HISTORY
     {
         id: 11,
         pointsWorth: 100,
@@ -87,6 +88,7 @@ var questionArray = [ /// Array of all questions as their own object with id, po
         a4: "What is the USS Missouri?",
         ac: "a1"
     },
+    // CATEGORY 2 MUSIC
     {
         id: 21,
         pointsWorth: 100,
@@ -130,13 +132,14 @@ var questionArray = [ /// Array of all questions as their own object with id, po
     {
         id: 25,
         pointsWorth: 500,
-        q: "",
-        a1: "Who is George Washington",
-        a2: "Who is Barrack Obama",
-        a3: "Who is Hillary Clinton",
-        a4: "Who is Danny Hurley",
+        q: "Actor Bruce Willis became known as a musician when he released this song encouraging all to respect themselves",
+        a1: 'What is "R-E-S-P-E-C-T"?',
+        a2: 'Who is "Respect"?',
+        a3: 'Who is "Respect Me Please"?',
+        a4: 'Who is "Respect Youself"?',
         ac: "a2"
     },
+    // CATEGORY 3 CAPITALS OF COUNTRIES
     {
         id: 31,
         pointsWorth: 100,
@@ -187,6 +190,7 @@ var questionArray = [ /// Array of all questions as their own object with id, po
         a4: "What is Serbia?",
         ac: "a1"
     },
+    // CATEGORY 5 SCIENCE QUESTIONS
     {
         id: 41,
         pointsWorth: 100,
