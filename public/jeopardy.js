@@ -440,7 +440,7 @@ var checkCorrect = function() { //Checks to see if the answer selected equals th
                 alert("Incorrect! Player1's turn to answer!");
                 $('#score_two').html("Player2 Score: " + playerTwoScore);
             }
-            this.disabled = true;
         }) 
     }
+    this.disabled = true;
 }
