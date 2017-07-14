@@ -370,20 +370,17 @@ window.onload = function(){
 //SELECTING A QUESTION
 var showQuestion = function(event) { //GIVEN I am on the gameboard page //WHEN I click on a game block //THEN makes question appear in footer
     event.target.disabled = true; //Disables the button's onclick functionality so it can't be clicked again
-    //event.target.css("background", "black");
-    console.log(event.target);
     event.target.style.color = 'rgba(225,225,225,0.3)';
-    questionsRemaining -= 1;
     var $modal = $('#q_modal'); // Sets modal = a variable
     $modal.show(); // Changes modal's display value from none to block       
     var question = questionArray.filter(function(question) { // Filters through the questionArray to grab the question object with the same Id as the button clicked
         return question.id == event.target.id;
     });
     question = question[0];
-    var $close = $('#closer'); // Gives ability to close the modal without answering, no points awarded
-        $close.on("click", function() {
-        $('#q_modal').hide();
-    });
+    // var $close = $('#closer'); // Gives ability to close the modal without answering, no points awarded
+    //     $close.on("click", function() {
+    //     $('#q_modal').hide();
+    // });
     var $modalContent = $('#modal_c');
     $('#q').text(question.q);
     var correctAnswer = question.ac;
@@ -403,12 +400,16 @@ var showQuestion = function(event) { //GIVEN I am on the gameboard page //WHEN I
 }
 
 var gameover = function() {
-    if (playerOneScore > playerTwoScore){
-        alert("GAME OVER! PLAYER ONE WINS");
-    } else if (playerTwoScore > playerOneScore) {
-        alert("GAME OVER! PLAYER TWO WINS");
-    } else {
-        alert("GAME OVER! NOBODY WINS!");
+    questionsRemaining -= 1;
+    console.log(questionsRemaining);
+    if (questionsRemaining === 0){
+        if (playerOneScore > playerTwoScore){
+            alert("GAME OVER! PLAYER ONE WINS");
+        } else if (playerTwoScore > playerOneScore) {
+            alert("GAME OVER! PLAYER TWO WINS");
+        } else {
+            alert("GAME OVER! NOBODY WINS!");
+        }
     }
 }
 
@@ -420,6 +421,7 @@ var checkCorrect = function() { //Checks to see if the answer selected equals th
                 alert("Correct!");
                 $('#score_one').html("Player1 Score: " + playerOneScore);
                 $('#q_modal').hide();
+                gameover();
             } else if(playerOneUp === true && this.id != $('#q_modal').attr('correctAnswer')) {
                 playerOneUp = false;
                 playerOneScore -= parseInt($(this).attr('points'), 10);
@@ -431,6 +433,7 @@ var checkCorrect = function() { //Checks to see if the answer selected equals th
                 playerTwoScore += parseInt($(this).attr('points'), 10);
                 $('#score_two').html("Player2 Score: " + playerTwoScore);
                 $('#q_modal').hide();
+                gameover();
             } else if(playerOneUp === false && this.id != $('#q_modal').attr('correctAnswer')) {
                 playerOneUp = true;
                 playerTwoScore -= parseInt($(this).attr('points'), 10);
@@ -438,8 +441,5 @@ var checkCorrect = function() { //Checks to see if the answer selected equals th
                 $('#score_two').html("Player2 Score: " + playerTwoScore);
             }
         }) 
-    }
-    if (questionsRemaining === 0){
-        gameover();
     }
 }
