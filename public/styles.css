@@ -2,6 +2,7 @@
 body {
     background-color: blue;
     color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #logo {
@@ -15,10 +16,22 @@ h1 {
 }
 
 #score_board {
-   border: 2px solid white;
+   border-left: 2px solid white;
+   border-right: 2px solid white;
    border-radius: 25px;
    padding: 10px;
-   width: 200px;
+   width: 400px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+}
+
+.score {
+    border: 1px solid white;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px 30px;
+    width: 300px;
 }
 
 main {
@@ -31,10 +44,13 @@ main {
 #game_board {
     height: 625px;
     width: 825px;
-    background-color: rgba(0, 200, 225, 0.6);
+    background-image: background-image: -webkit-gradient(linear, left top, left bottom, from(blue), to(green));
+    background-image: -webkit-linear-gradient(top, blue, green);
+    background-image: -moz-linear-gradient(top, blue, green);
+    background-image: linear-gradient(to bottom, blue, green);;
     display: flex;
     flex-direction: row;
-    border: 2px solid black;
+    border: 1px solid white;
     border-radius: 25px;
 }
 
@@ -43,7 +59,8 @@ main {
     display: flex;
     flex-direction: column;
     width: 20%;
-    border: 2px solid whitesmoke;
+    border-left: 2px solid whitesmoke;
+    border-right: 2px solid whitesmoke;
     padding: 2px;
     border-radius: 25px;
 }
@@ -54,13 +71,16 @@ main {
     border-radius: 25px;
     text-align: center;
     padding: 10px;
+    font-size: 20px;
+    background-color: rgba(0,0,220,0.3);
 }
 
 .game_block {
     color: white;
     height: 15%;
     width: 90%;
-    border: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
     margin: 10px;
     text-align: center;
     border-radius: 10px;
@@ -79,6 +99,7 @@ footer {
 p {
     color: black;
 }
+
 /* The Modal (background) */
 .modal {
     position: fixed; /* Stay in place */

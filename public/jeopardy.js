@@ -344,7 +344,10 @@ window.onload = function(){
     displayColumn(3, cat3.categoryName, cat3.categoryId);
     displayColumn(4, cat4.categoryName, cat4.categoryId);
     displayColumn(5, cat5.categoryName, cat5.categoryId);
-    };
+    checkCorrect();
+};
+
+var checkCorrect = function() {
     for (var i = 1; i <= 4; i++) { // Hassan helped here a lot
         $(`#a${i}`).click(function(event) {
             console.log('this.id is ' + this.id);
@@ -356,6 +359,8 @@ window.onload = function(){
             }
         })
     }
+}
+
 /// Top-Level Application Code ///
 
 //SELECTING A QUESTION
