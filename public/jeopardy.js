@@ -314,31 +314,44 @@ var questionArray = [ /// Array of all questions as their own object with id, po
 var displayColumn= function(columnNumber, categoryName, categoryId) {
     var pointsWorth = 100;
     for(var i = 0; i < 6; i++){
-        if(i === 0) {
+        if(i === 0) { // Add the category name as a div
             var $catName = $('<div>'); 
             $catName.addClass("category");
             $catName.html(categoryName);
             $('#column' + columnNumber).append($catName);
 
-        } else {
+        } else { // Add/build the game blocks with their point value
 
             var $gameblock = $('<button>');
             $gameblock.addClass("game_block");
             var gid = categoryId + '' + i;
             var pgid = parseInt(gid);
             $gameblock.attr('id', pgid);
+            $gameblock.attr('points', pointsWorth);
             $gameblock.html(pointsWorth);
             pointsWorth +=100;
-
-            $gameblock.on("click", function() {
-                showQuestion(event);                    
+            $gameblock.on("click", function() { 
+                showQuestion(event);                 
                 });
-
             $gameblock.appendTo('#column' + columnNumber);
 
         }
     }
 }
+
+var initiateScores = function(playerOneScore, playerTwoScore) { // Sets scores to zero to start the game
+    $('#score_one').html("Player1 Score: " + playerOneScore);
+    $('#score_two').html("Player2 Score: " + playerTwoScore);
+    alert("Welcome to Jeopardy");
+    alert("Player1 is up first");
+}
+
+    // var poi = $('#points_worth');
+        // console.log(poi.text);
+        // var points = poi.text;
+        // console.log("Points worth are " + points);
+
+//}
 
 window.onload = function(){
     $('#q_modal').hide();
@@ -347,20 +360,50 @@ window.onload = function(){
     displayColumn(3, cat3.categoryName, cat3.categoryId);
     displayColumn(4, cat4.categoryName, cat4.categoryId);
     displayColumn(5, cat5.categoryName, cat5.categoryId);
-    checkCorrect();
     initiateScores(playerOneScore, playerTwoScore);
+    checkCorrect();
 };
 
-var initiateScores = function(playerOneScore, playerTwoScore) {
-    $('#score_one').html("Player1 Score: " + playerOneScore);
-    $('#score_two').html("Player2 Score: " + playerTwoScore);
-    alert("Welcome to Jeopardy");
-    alert("Player1 is up first");
+/// Top-Level Application Code ///
+
+//SELECTING A QUESTION
+var showQuestion = function(event) { //GIVEN I am on the gameboard page //WHEN I click on a game block //THEN makes question appear in footer
+    event.target.disabled = true; //Disables the button's onclick functionality so it can't be clicked again
+    var $modal = $('#q_modal'); // Sets modal = a variable
+    $modal.show(); // Changes modal's display value from none to block       
+    var question = questionArray.filter(function(question) { // Filters through the questionArray to grab the question object with the same Id as the button clicked
+        return question.id == event.target.id;
+    });
+    question = question[0];
+    var $close = $('#closer'); // Gives ability to close the modal without answering, no points awarded
+        $close.on("click", function() {
+        $('#q_modal').hide();
+    });
+    var $modalContent = $('#modal_c');
+    $('#q').text(question.q);
+    var correctAnswer = question.ac;
+    $modal.attr('correctAnswer', correctAnswer);
+    
+    var $answer1 = $('#a1');
+    $answer1.html(question.a1);
+    var $answer2 = $('#a2');
+    $answer2.html(question.a2);
+    var $answer3 = $('#a3');
+    $answer3.html(question.a3);
+    var $answer4 = $('#a4');
+    $answer4.html(question.a4);
+    $answer4.attr('points', question.pointsWorth);
+    var $points = $('#points_worth');
+    $points.text(question.pointsWorth);
+    $('.answer').attr('points', question.pointsWorth);
+    console.log('points attr are ' + question.pointsWorth);
+    console.log('points jquery are ' + $answer4.points);
 }
 
-var checkCorrect = function() {
+var checkCorrect = function() { //Checks to see if the answer selected equals the correct answer for that question object
     for (var i = 1; i <= 4; i++) { // Hassan helped here a lot
-        $(`#a${i}`).click(function(event) {
+         $(`#a${i}`).click(function(event) {
+             console.log("points in checkCorrect" + this.points);
             if (playerOneUp === true && this.id == $('#q_modal').attr('correctAnswer')) {
                 playerOneScore += 100;
                 alert("Correct!");
@@ -386,38 +429,3 @@ var checkCorrect = function() {
         }) 
     }
 }
-
-/// Top-Level Application Code ///
-
-//SELECTING A QUESTION
-//GIVEN I am on the gameboard page 
-//WHEN I click on a game block 
-//THEN makes question appear in footer
-var showQuestion = function(event) {
-    var $modal = $('#q_modal');
-    $modal.show();       
-    var question = questionArray.filter(function(question) {
-        return question.id == event.target.id;
-    });
-    question = question[0];
-    var $close = $('#closer');
-        $close.on("click", function() {
-        $('#q_modal').hide();
-    });
-    var $modalContent = $('#modal_c');
-    $('#q').text(question.q);
-    var correctAnswer = question.ac;
-    $modal.attr('correctAnswer', correctAnswer);
-    var $answer1 = $('#a1');
-    $answer1.html(question.a1);
-    var $answer2 = $('#a2');
-    $answer2.html(question.a2);
-    var $answer3 = $('#a3');
-    $answer3.html(question.a3);
-    var $answer4 = $('#a4');
-    $answer4.html(question.a4);
-}
-
-
-
-
