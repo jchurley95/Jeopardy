@@ -83,10 +83,9 @@ footer {
     text-align: center;
 }
 
-#q {
-    height:100px;
+p {
+    color: black;
 }
-
 /* The Modal (background) */
 .modal {
     position: fixed; /* Stay in place */

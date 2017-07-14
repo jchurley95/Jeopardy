@@ -324,8 +324,12 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
 
             $gameblock.on("click", function() {
                 showQuestion(event);
-            }
-            );
+                var $modal = $('#q_modal');
+                $modal.show();
+                // questionArray.filter(this.id){
+                    
+
+                });
 
             $gameblock.appendTo('#column' + columnNumber);
 
@@ -333,47 +337,40 @@ var displayColumn= function(columnNumber, categoryName, categoryId) {
     }
 }
 
-var $close = $('#closer');
-            $close.on("click", function() {
+var showQuestion = function(event) {
+            console.log('$this is: ');
+            console.log($(this));
+            console.log('event.target is: ');
+            console.log(event.target);
+            var question = questionArray.filter(function(question) {
+                return question.id == event.target.id;
+            });
+            question = question[0];
+  
+            var $close = $('#closer');
+                $close.on("click", function() {
                 $('#q_modal').hide();
             });
 
-var showQuestion = function(event) {
-
-            var $modal = $('#q_modal');
-                $modal.show();
-
-            var question = questionArray.filter(function(question) {
-                return question.id === event.currentTarget.id;
-            });
-
-            console.log(question.id);
-            console.log(this.id);
-            console.log(event.target.id);
-            console.log(questionArray[0]);
-            // var $modal = $('#q_modal');
-            
-
             var $modalContent = $('#modal_c');
             
-            var $questionSpace = $('#q');
-            $questionSpace.attr(questionArray[0].q);
+            $('#q').text(question.q);
 
             var $answer1 = $('#a1');
-            $answer1.html(questionArray[0].a1);
+            $answer1.html(question.a1);
             $answer1.on("click", checkCorrect);
 
             var $answer2 = $('#a2');
-            $answer2.html(questionArray[0].a2);
+            $answer2.html(question.a2);
             $answer2.on("click", checkCorrect);
 
             var $answer3 = $('#a3');
-            $answer3.html(questionArray[0].a3);
+            $answer3.html(question.a3);
             $answer3.on("click", checkCorrect);
 
 
             var $answer4 = $('#a4');
-            $answer4.html(questionArray[0].a4);
+            $answer4.html(question.a4);
             $answer4.on("click", checkCorrect);
 
 }
