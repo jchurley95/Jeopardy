@@ -114,7 +114,11 @@ footer {
 
 p {
     color: black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 25px;
 }
+
 
 #points_worth {
 
@@ -152,4 +156,6 @@ p {
     text-decoration: none;
     cursor: pointer;
     font-size: 14px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
