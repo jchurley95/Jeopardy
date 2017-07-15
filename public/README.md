@@ -11,6 +11,11 @@
 
 ![screen shot 2017-07-15 at 4 32 40 pm](https://user-images.githubusercontent.com/28677283/28242500-a6717b62-697b-11e7-887f-8a90262d7c24.png)
 
+![screen shot 2017-07-15 at 4 39 15 pm](https://user-images.githubusercontent.com/28677283/28242523-75ca4556-697c-11e7-8304-c53e73aa55a3.png)
+
+![screen shot 2017-07-15 at 4 39 28 pm](https://user-images.githubusercontent.com/28677283/28242524-7890a712-697c-11e7-971b-771ce460ec65.png)
+
+![screen shot 2017-07-15 at 4 38 37 pm](https://user-images.githubusercontent.com/28677283/28242525-7c9fbc1c-697c-11e7-9dff-a4edc1a97a64.png)
 
 ## Misc.:
 * GitHub repo for this game: https://github.com/jchurley95/Jeopardy
