@@ -8,6 +8,10 @@
 * Players have 30 seconds to answer a question
 * Enjoy the relaxing electronic background music
 
+
+![screen shot 2017-07-15 at 4 32 40 pm](https://user-images.githubusercontent.com/28677283/28242500-a6717b62-697b-11e7-887f-8a90262d7c24.png)
+
+
 ## Misc.:
 * GitHub repo for this game: https://github.com/jchurley95/Jeopardy
 * (Wireframes are listed on repo)
