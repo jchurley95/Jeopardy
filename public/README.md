@@ -17,6 +17,9 @@
 
 ![screen shot 2017-07-15 at 4 39 28 pm](https://user-images.githubusercontent.com/28677283/28242524-7890a712-697c-11e7-971b-771ce460ec65.png)
 
+![screen shot 2017-07-15 at 4 40 52 pm](https://user-images.githubusercontent.com/28677283/28242536-ac85e4b0-697c-11e7-9743-8a34d1bb6176.png)
+
+
 ## Misc.:
 * GitHub repo for this game: https://github.com/jchurley95/Jeopardy
 * (Wireframes are listed on repo)
