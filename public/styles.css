@@ -19,8 +19,6 @@ h1 {
 }
 
 #score_board {
-   border-left: 2px solid white;
-   border-right: 2px solid white;
    border-radius: 25px;
    padding: 10px;
    display: flex;
@@ -113,15 +111,13 @@ footer {
 
 
 p {
-    color: black;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    font-size: 24px;
+    background-color: rgba(0,225,225,0.9);
+    color: white;;
+    border-top: 1px solid white;
+    border-bottom: 1px solid blue;
     border-radius: 25px;
-}
-
-
-#points_worth {
-
+    padding: 5px;
 }
 
 /* The Modal (background) */
@@ -140,7 +136,8 @@ p {
 
 /* Modal Content */
 .modal-content {
-    background-color: #fefefe;
+    border-radius: 25px;
+    background-color: rgba(0,225,225,0.7);
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
@@ -149,13 +146,18 @@ p {
 }
 
 .answer {
-    font-size: 12px;
+    font-size: 20px;
+    border-radius: 25px;
+    background-color: rgba(0,225,225,0.7);
+    color: whitesmoke;
+    margin: 5px;
 }
 .answer:hover{
-    color: green;
+    background-color: rgba(0,225,225,0.9);
+    color: white;
     text-decoration: none;
     cursor: pointer;
-    font-size: 14px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    border-radius: 25px;
 }

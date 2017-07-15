@@ -97,20 +97,20 @@ var questionArray = [ /// Array of all questions as their own object with id, po
         id: 21,
         pointsWorth: 100,
         q: 'Recorded the song "Hey Jude"' ,
-        a1: "Who is The Beatles",
-        a2: "Who is The Rolling Stones",
-        a3: "Who is Lil' Yachty",
-        a4: "Who is Kanye West",
+        a1: "Who is The Beatles?",
+        a2: "Who is The Rolling Stones?",
+        a3: "Who is Lil' Yachty?",
+        a4: "Who is Kanye West?",
         ac: "a1"
     },
     {
         id: 22,
         pointsWorth: 200,
         q: '"Panda, panda, I got..."',
-        a1: "What is broads in Atlanta",
-        a2: "What is respectable, young women in the UK",
-        a3: "What is nice ladies in Japan",
-        a4: "What is Danny Hurley",
+        a1: "What is broads in Atlanta?",
+        a2: "What is respectable, young women in the UK?",
+        a3: "What is nice ladies in Japan?",
+        a4: "What is Danny Hurley?",
         ac: "a1"
     },
     {
@@ -128,9 +128,9 @@ var questionArray = [ /// Array of all questions as their own object with id, po
         pointsWorth: 400,
         q: "What is Jay-z’s real name?",
         a1: "What is Shaun Carter?",
-        a2: "What is Led Zeppelin",
-        a3: "What is Jake Gyllenhall",
-        a4: "What is Danny Hurley",
+        a2: "What is Led Zeppelin?",
+        a3: "What is Jake Gyllenhall?",
+        a4: "What is Danny Hurley?",
         ac: "a1"
     },
     {
@@ -443,4 +443,6 @@ var checkCorrect = function() { //Checks to see if the answer selected equals th
         }) 
     }
     this.disabled = true;
+
+
 }
