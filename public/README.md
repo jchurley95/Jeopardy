@@ -25,3 +25,4 @@
 * (Wireframes are listed on repo)
 * Deployed at jeoparty.bitballoon.com
 * For this program, used Jquery library
+* Trello board: https://trello.com/b/9rdPNzd7/jeopardy
